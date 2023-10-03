@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Canvas" style="flex-grow: 1;">
+        <ui:VisualElement name="HUD" style="flex-grow: initial; background-image: url(&apos;project://database/Assets/Sprites/uipack_rpg_sheet.png?fileID=-1806780115&amp;guid=a564e6e4361141840bae29046de96842&amp;type=3#ui_panel_white&apos;); width: 200px; height: 100px; max-width: none; max-height: none; min-width: auto; min-height: auto; align-self: flex-start; align-items: stretch; flex-basis: auto; top: 10px; left: 10px; right: auto; bottom: auto; flex-shrink: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+            <ui:VisualElement name="HealthSection" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: initial; background-image: url(&apos;project://database/Assets/Sprites/uipack_rpg_sheet.png?fileID=-1726305843&amp;guid=a564e6e4361141840bae29046de96842&amp;type=3#ui_dot_white&apos;); -unity-background-image-tint-color: rgb(255, 0, 0); width: 30px; height: 30px; max-width: initial; max-height: initial; min-width: initial; min-height: initial; flex-shrink: initial; align-items: flex-start;" />
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="HealthLabel" style="font-size: 20px; -unity-font-style: bold; -unity-text-align: upper-right; align-self: auto;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GoldSection" style="flex-grow: 1; flex-direction: row; justify-content: flex-start; align-items: auto;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: initial; background-image: url(&apos;project://database/Assets/Sprites/uipack_rpg_sheet.png?fileID=-1726305843&amp;guid=a564e6e4361141840bae29046de96842&amp;type=3#ui_dot_white&apos;); -unity-background-image-tint-color: rgb(255, 255, 0); width: 30px; height: 30px; max-width: initial; max-height: initial; min-width: initial; min-height: initial; flex-shrink: initial; align-items: flex-start;" />
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="GoldLabel" style="font-size: 20px; -unity-font-style: bold; -unity-text-align: upper-right; align-self: auto;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Pointer" style="flex-grow: 1; position: absolute; flex-basis: initial; width: 34px; height: 34px; background-image: url(&apos;project://database/Assets/Sprites/uipack_rpg_sheet.png?fileID=-1643905633&amp;guid=a564e6e4361141840bae29046de96842&amp;type=3#ui_sword_yellow&apos;); background-color: rgba(0, 0, 0, 0); display: flex;" />
+    </ui:VisualElement>
+</ui:UXML>
