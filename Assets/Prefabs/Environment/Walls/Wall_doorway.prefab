@@ -133,7 +133,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 1.3750001, z: 0.38700002}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.82000005, y: 1.3750001, z: 0}
   m_TimeToStationary: 0.5
@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 4404316228383816090}
   - component: {fileID: 5580401581306229332}
   - component: {fileID: 4184342483982073173}
-  - component: {fileID: 6268078421466070496}
   m_Layer: 0
   m_Name: Wall_doorway
   m_TagString: Untagged
@@ -266,19 +265,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 1.5, y: 2, z: 0}
---- !u!208 &6268078421466070496
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9063136383403593305}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 2, y: 2, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 2, z: 0}
-  m_TimeToStationary: 0.5
