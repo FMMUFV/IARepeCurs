@@ -26,9 +26,9 @@ public class Mage : MonoBehaviour
         VelocidadIni = aget.speed;
 
 
-        //Inicializar posicion y movimento
-        IniciarPatrulla();
-        
+        //Se dice cual es la primera poscion a la que tiene que ir
+        Destino = ListaWaypoints[0];
+
     }
 
     // Update is called once per frame
@@ -64,14 +64,7 @@ public class Mage : MonoBehaviour
     }
 
 
-    public void IniciarPatrulla()
-    {
-        Destino = ListaWaypoints[0];
-        NavMeshAgent aget = GetComponent<NavMeshAgent>();
-        aget.destination = Destino.position;
-    }
-
-
+     
 
     public void patrulla()
      {
