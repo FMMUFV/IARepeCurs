@@ -62,9 +62,6 @@ public class Warrior : MonoBehaviour
                 EnlaArena = false;
                 Debug.Log("pisando");
             }
-
-
-
         }
         else
         {
@@ -104,7 +101,5 @@ public class Warrior : MonoBehaviour
         aget.destination = Destino.position;
 
     }
-
-
 
 }
