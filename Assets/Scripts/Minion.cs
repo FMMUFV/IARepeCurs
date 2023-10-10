@@ -50,11 +50,12 @@ public class Minion : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 2.0f, PuenteMask))
         {
-            //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
-            NavMeshAgent aget = GetComponent<NavMeshAgent>();
+           
 
             if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
             {
+                //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+                NavMeshAgent aget = GetComponent<NavMeshAgent>();
                 aget.speed = VelocidadIni / 2;
                 EnlaArena = false;
                 Debug.Log("pisando");
