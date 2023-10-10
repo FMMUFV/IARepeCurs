@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Minion : MonoBehaviour
 {
     // Start is called before the first frame update
+
     private Transform Destino;//Direccion a la que tiene que ir
     private int siguientePos;
     private int NumeDelaLista;
@@ -33,8 +34,6 @@ public class Minion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         patrulla();
 
         EnPuente();
@@ -72,8 +71,6 @@ public class Minion : MonoBehaviour
             EnlaArena = true;
         }
     }
-
-
 
 
     public void IniciarPatrulla()
@@ -114,4 +111,6 @@ public class Minion : MonoBehaviour
         aget.destination = Destino.position;
 
     }
+
+
 }

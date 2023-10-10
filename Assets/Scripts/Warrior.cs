@@ -42,7 +42,6 @@ public class Warrior : MonoBehaviour
     }
 
 
-
     private bool EnlaArena = false;
 
 
@@ -74,8 +73,6 @@ public class Warrior : MonoBehaviour
             EnlaArena = true;
         }
     }
-
-
 
 
     public void IniciarPatrulla()
@@ -116,5 +113,6 @@ public class Warrior : MonoBehaviour
         aget.destination = Destino.position;
 
     }
+
 
 }
