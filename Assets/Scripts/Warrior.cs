@@ -44,7 +44,7 @@ public class Warrior : MonoBehaviour
 
     private bool EnlaArena = false;
 
-
+    //Puente O pasarela
     public void EnPuente()
     {
 
