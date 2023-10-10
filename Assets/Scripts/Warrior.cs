@@ -84,8 +84,8 @@ public class Warrior : MonoBehaviour
         //La dimension que tiene la lista de Waypoints
         NumeDelaLista = ListaWaypoints.Count;
 
-        //Si la distancia es menor que 1 y si el siguientePost es menor que NumeDelaLista
-        if (dist < 1 && siguientePos < NumeDelaLista)
+        //if (dist < 1 && siguientePos < NumeDelaLista)
+        if (dist < 1)
         {
 
 
@@ -104,6 +104,7 @@ public class Warrior : MonoBehaviour
         aget.destination = Destino.position;
 
     }
+
 
 
 }
