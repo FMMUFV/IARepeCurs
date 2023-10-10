@@ -25,9 +25,8 @@ public class Mage : MonoBehaviour
         NavMeshAgent aget = GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
 
-
-        //Inicializar posicion y movimento
-        IniciarPatrulla();
+        //Asignar el primer destino
+        Destino = ListaWaypoints[0];
 
     }
 
@@ -75,12 +74,7 @@ public class Mage : MonoBehaviour
     }
 
 
-    public void IniciarPatrulla()
-    {
-        Destino = ListaWaypoints[0];
-        NavMeshAgent aget = GetComponent<NavMeshAgent>();
-        aget.destination = Destino.position;
-    }
+
 
 
 
