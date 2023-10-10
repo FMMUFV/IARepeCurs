@@ -21,29 +21,33 @@ public class Mage : MonoBehaviour
 
     void Start()
     {
-      //-----Puente recojer velocidad inicial------
+        //-----Puente recojer velocidad inicial------
         NavMeshAgent aget = GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
 
 
-        //Se dice cual es la primera poscion a la que tiene que ir
-        Destino = ListaWaypoints[0];
+        //Inicializar posicion y movimento
+        IniciarPatrulla();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+
 
         patrulla();
 
         EnPuente();
     }
 
+
+    private bool EnlaArena = false;
+
+
     public void EnPuente()
     {
-        
+
 
         PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
         NavMeshHit hit;
@@ -51,23 +55,37 @@ public class Mage : MonoBehaviour
         {
             //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
             NavMeshAgent aget = GetComponent<NavMeshAgent>();
-            
-            aget.speed = VelocidadIni / 2;
-            
+
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                aget.speed = VelocidadIni / 2;
+                EnlaArena = false;
+                Debug.Log("pisando");
+            }
+
+
+
         }
         else
         {
             NavMeshAgent aget = GetComponent<NavMeshAgent>();
-            
             aget.speed = VelocidadIni;
+            EnlaArena = true;
         }
     }
 
 
-     
+    public void IniciarPatrulla()
+    {
+        Destino = ListaWaypoints[0];
+        NavMeshAgent aget = GetComponent<NavMeshAgent>();
+        aget.destination = Destino.position;
+    }
+
+
 
     public void patrulla()
-     {
+    {
         //Inicializar y crear variable aget
         NavMeshAgent aget = GetComponent<NavMeshAgent>();
         //Variable Dist para ver la distancia que hay de su destino
@@ -76,24 +94,24 @@ public class Mage : MonoBehaviour
         NumeDelaLista = ListaWaypoints.Count;
 
         //Si la distancia es menor que 1 y si el siguientePost es menor que NumeDelaLista
-         if (dist < 1 && siguientePos < NumeDelaLista)
-         {
-             
+        if (dist < 1 && siguientePos < NumeDelaLista)
+        {
 
-             if (siguientePos >= (NumeDelaLista - 1))
-             {
-                 siguientePos = 0;
-             }
-             else
-             {
-                 siguientePos++;
-             }
-             Destino = ListaWaypoints[siguientePos];
+
+            if (siguientePos >= (NumeDelaLista - 1))
+            {
+                siguientePos = 0;
+            }
+            else
+            {
+                siguientePos++;
+            }
+            Destino = ListaWaypoints[siguientePos];
             // aget.destination = Destino.position; 
 
-         }
+        }
         aget.destination = Destino.position;
-       
+
     }
 
 

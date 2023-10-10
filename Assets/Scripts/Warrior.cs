@@ -41,6 +41,11 @@ public class Warrior : MonoBehaviour
         EnPuente();
     }
 
+
+
+    private bool EnlaArena = false;
+
+
     public void EnPuente()
     {
 
@@ -52,16 +57,25 @@ public class Warrior : MonoBehaviour
             //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
             NavMeshAgent aget = GetComponent<NavMeshAgent>();
 
-            aget.speed = VelocidadIni / 2;
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                aget.speed = VelocidadIni / 2;
+                EnlaArena = false;
+                Debug.Log("pisando");
+            }
+
+
 
         }
         else
         {
             NavMeshAgent aget = GetComponent<NavMeshAgent>();
-
             aget.speed = VelocidadIni;
+            EnlaArena = true;
         }
     }
+
+
 
 
     public void IniciarPatrulla()
