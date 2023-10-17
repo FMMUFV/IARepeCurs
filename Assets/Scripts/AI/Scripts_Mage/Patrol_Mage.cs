@@ -16,7 +16,7 @@ public class Patrol_Mage : StateMachineBehaviour
 
     public List<Transform> ListaWaypoints;
 
-    private Mage scritc;
+    private Agent scritc;
 
     private bool EnlaArena = false;
 
@@ -25,7 +25,7 @@ public class Patrol_Mage : StateMachineBehaviour
     {
 
         //Asignar componencte scrit para obtener sus componentes del scrtip
-        scritc = animator.gameObject.GetComponent<Mage>();
+        scritc = animator.gameObject.GetComponent<Agent>();
         ListaWaypoints = scritc.ListaWaypoints;
 
         //-----Puente recojer velocidad inicial------
