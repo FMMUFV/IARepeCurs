@@ -796,9 +796,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5690238152782260812}
   - component: {fileID: 517119000753141450}
-  - component: {fileID: 1355366984517247824}
   - component: {fileID: 744749696586649281}
   - component: {fileID: 6691254627189956489}
+  - component: {fileID: 1765151928039986248}
+  - component: {fileID: 6635988247259131198}
   m_Layer: 0
   m_Name: SkeletonWarrior
   m_TagString: Untagged
@@ -844,24 +845,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
---- !u!114 &1355366984517247824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374314283631421470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7dd3e22d3a96e4c98d2abf26de7ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VelocidadIni: 0
-  ListaWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!135 &744749696586649281
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -910,6 +893,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1765151928039986248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374314283631421470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListaWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!95 &6635988247259131198
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374314283631421470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aaef9bdbd00c6d643818ccd7651bd33f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9107320214233837947
 GameObject:
   m_ObjectHideFlags: 0
