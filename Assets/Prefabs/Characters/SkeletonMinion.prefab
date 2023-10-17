@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 7747957843192492801}
   m_Layer: 0
   m_Name: SkeletonMinion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,6 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycas: 5
   ListaWaypoints:
   - {fileID: 0}
   - {fileID: 0}

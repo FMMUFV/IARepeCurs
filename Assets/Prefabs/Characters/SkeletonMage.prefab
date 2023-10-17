@@ -411,8 +411,8 @@ GameObject:
   - component: {fileID: 9128624428218940725}
   - component: {fileID: 9111362752242919915}
   - component: {fileID: 9141632366840807797}
-  - component: {fileID: 6463482508938372155}
   - component: {fileID: 7458891232421095595}
+  - component: {fileID: 8856484577106773118}
   m_Layer: 0
   m_Name: SkeletonMage
   m_TagString: Untagged
@@ -501,7 +501,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &6463482508938372155
+--- !u!114 &7458891232421095595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473877733736978305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycas: 5
+  ListaWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!54 &8856484577106773118
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,23 +545,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7458891232421095595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473877733736978305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListaWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3772162810513724584
 GameObject:
   m_ObjectHideFlags: 0

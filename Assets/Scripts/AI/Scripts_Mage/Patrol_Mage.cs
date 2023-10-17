@@ -12,13 +12,15 @@ public class Patrol_Mage : StateMachineBehaviour
 
     private int PuenteMask;//Paraque afecte cuando esta en el puente
     public float VelocidadIni;
+    private bool EnlaArena = false;
 
-
+    
+    //Datos del scritp agent
+    private Agent scritc;
+    public float raycas;
     public List<Transform> ListaWaypoints;
 
-    private Agent scritc;
-
-    private bool EnlaArena = false;
+    RaycastHit hit;//rayo
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,9 +29,10 @@ public class Patrol_Mage : StateMachineBehaviour
         //Asignar componencte scrit para obtener sus componentes del scrtip
         scritc = animator.gameObject.GetComponent<Agent>();
         ListaWaypoints = scritc.ListaWaypoints;
+        raycas = scritc.raycas;
 
-        //-----Puente recojer velocidad inicial------
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+    //-----Puente recojer velocidad inicial------
+    NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
 
         //Asignar el primer destino
@@ -43,7 +46,7 @@ public class Patrol_Mage : StateMachineBehaviour
 
         patrulla(animator);
         EnPuente(animator);
-
+        Rayo(animator);
 
     }
 
@@ -111,5 +114,27 @@ public class Patrol_Mage : StateMachineBehaviour
         }
         aget.destination = Destino.position;
 
+    }
+
+
+   
+ 
+
+
+    public void Rayo(Animator animator)
+    {
+
+        Vector3 rayDirection =  animator.transform.forward;
+
+        Debug.DrawRay(animator.transform.position, animator.transform.forward * raycas, Color.red);
+
+        if(Physics.Raycast(animator.transform.position, animator.transform.forward * raycas, out hit, raycas))
+        {
+            if(hit.transform.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Toca al enemigo" + hit.transform.gameObject.name);
+            }
+           
+        }
     }
 }

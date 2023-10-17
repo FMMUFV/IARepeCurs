@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-
+    public float raycas;
     public List<Transform> ListaWaypoints;
 
 }
