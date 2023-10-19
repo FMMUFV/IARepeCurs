@@ -116,25 +116,23 @@ public class Patrol_Mage : StateMachineBehaviour
 
     }
 
-
-   
- 
-
-
     public void Rayo(Animator animator)
     {
 
         Vector3 rayDirection =  animator.transform.forward;
 
-        Debug.DrawRay(animator.transform.position, animator.transform.forward * raycas, Color.red);
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
 
-        if(Physics.Raycast(animator.transform.position, animator.transform.forward * raycas, out hit, raycas))
+        if(Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-            if(hit.transform.gameObject.tag == "Enemy")
+   
+        // Detectar al jugador
+            if (hit.transform.gameObject.tag == "Player")
             {
-                Debug.Log("Toca al enemigo" + hit.transform.gameObject.name);
+                animator.SetBool("Pursue", true);
+
             }
-           
+
         }
     }
 }
