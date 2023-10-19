@@ -796,10 +796,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5690238152782260812}
   - component: {fileID: 517119000753141450}
-  - component: {fileID: 744749696586649281}
   - component: {fileID: 6691254627189956489}
   - component: {fileID: 1765151928039986248}
   - component: {fileID: 6635988247259131198}
+  - component: {fileID: 2130443931360386602}
   m_Layer: 0
   m_Name: SkeletonWarrior
   m_TagString: Enemy
@@ -845,27 +845,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
---- !u!135 &744749696586649281
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374314283631421470}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6691254627189956489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -933,6 +912,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &2130443931360386602
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374314283631421470}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.8385239
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8392619, z: 0}
 --- !u!1 &9107320214233837947
 GameObject:
   m_ObjectHideFlags: 0
