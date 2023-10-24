@@ -11,30 +11,32 @@ public class Pursue_Mage : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         script = animator.gameObject.GetComponent<Agent>();
-    }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
         //Inicializar y crear variable aget
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         //Variable Dist para ver la distancia que hay de su destino
-        float dist = Vector3.Distance(script.Jugador.transform.position , aget.transform.position);
+        float dist = Vector3.Distance(script.Jugador.transform.position, aget.transform.position);
 
         if (dist < 10)
         {
             //PASA a atacar cuado el jugador esta a una distancia menor que 10 metros
             animator.SetBool("Attack", true);
             Debug.Log("Esta atacando");
-           
+
         }
         else
         {
             //Solo cuando no esta a una distancia menor de 10 metros
-            script.UltimaPosicion_Jugador = script.Jugador.transform;
+            script.UltimaPosicion_Jugador = script.Jugador.transform.position;
+           
             animator.SetBool("Search", true);
-            
+
         }
+    }
+
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+ 
     }
 
 

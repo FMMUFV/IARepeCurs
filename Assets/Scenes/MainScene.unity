@@ -44875,6 +44875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMage_00003
       objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69299,6 +69304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonMage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
