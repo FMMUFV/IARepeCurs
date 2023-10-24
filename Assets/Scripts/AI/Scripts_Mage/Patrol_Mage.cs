@@ -16,7 +16,7 @@ public class Patrol_Mage : StateMachineBehaviour
 
     
     //Datos del scritp agent
-    private Agent scritc;
+    private Agent script;
     public float raycas;
     public List<Transform> ListaWaypoints;
 
@@ -27,9 +27,9 @@ public class Patrol_Mage : StateMachineBehaviour
     {
 
         //Asignar componencte scrit para obtener sus componentes del scrtip
-        scritc = animator.gameObject.GetComponent<Agent>();
-        ListaWaypoints = scritc.ListaWaypoints;
-        raycas = scritc.raycas;
+        script = animator.gameObject.GetComponent<Agent>();
+        ListaWaypoints = script.ListaWaypoints;
+        raycas = script.raycas;
 
     //-----Puente recojer velocidad inicial------
     NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
@@ -130,7 +130,7 @@ public class Patrol_Mage : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 animator.SetBool("Pursue", true);
-
+                script.Jugador = hit.transform.gameObject;
             }
 
         }
