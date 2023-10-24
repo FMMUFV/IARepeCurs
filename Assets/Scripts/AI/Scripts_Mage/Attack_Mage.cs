@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class Attack_Mage : StateMachineBehaviour
 {
@@ -27,8 +28,8 @@ public class Attack_Mage : StateMachineBehaviour
             //Lanza un hechizo y no se mueve
 
             aget.stoppingDistance = 10;
-            Debug.Log("Lanza un hechizo");
-
+          
+            LanzaHechizo(animator);
         }
         else
         {
@@ -40,6 +41,18 @@ public class Attack_Mage : StateMachineBehaviour
         }
     }
 
+    public bool ataca = true;
 
+    //Aqui hace daño al jugador
+    public void LanzaHechizo(Animator animator)
+    {
+        if(ataca == true)
+        {
+            script.Jugador.SendMessage("Damage", 1);
+            Debug.Log("Lanza un hechizo");
+            ataca = false;
+        }
+        
+    }
 
 }

@@ -34,14 +34,14 @@ public class Search_Mage : StateMachineBehaviour
         //Si a llegado o esta posicion pasa a scad
         if(dist < 1)
         {
-            Debug.Log("Pasa a scan");
+            
             animator.SetBool("Scan", true);
            
         }
         else
         {
             Rayo(animator);
-            Debug.Log("Distancia: " + dist);
+            
         }
 
 
