@@ -7,5 +7,6 @@ public class Agent : MonoBehaviour
     public float raycas;
     public List<Transform> ListaWaypoints;
     public GameObject Jugador;
+    public Transform UltimaPosicion_Jugador;
 
 }

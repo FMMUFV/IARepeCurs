@@ -25,31 +25,19 @@ public class Pursue_Mage : StateMachineBehaviour
         {
             //PASA a atacar cuado el jugador esta a una distancia menor que 10 metros
             animator.SetBool("Attack", true);
+            Debug.Log("Esta atacando");
            
         }
         else
         {
             //Solo cuando no esta a una distancia menor de 10 metros
-            animator.SetBool("Pursue", false);
+            script.UltimaPosicion_Jugador = script.Jugador.transform;
+            animator.SetBool("Search", true);
             
         }
     }
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+
 
 }

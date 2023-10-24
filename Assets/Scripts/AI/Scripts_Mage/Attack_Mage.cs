@@ -1,36 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Attack_Mage : StateMachineBehaviour
 {
+    private Agent script;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        script = animator.gameObject.GetComponent<Agent>();
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //Inicializar y crear variable aget
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        //Variable Dist para ver la distancia que hay de su destino
+        float dist = Vector3.Distance(script.Jugador.transform.position, aget.transform.position);
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+        if (dist < 10)
+        {
+            //Ataca si esta a menos de 10
+            //Lanza un hechizo y no se mueve
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
+            aget.stoppingDistance = 10;
+            Debug.Log("Lanza un hechizo");
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+        }
+        else
+        {
+            //Solo cuando no esta a una distancia menor de 10 metros
+            aget.stoppingDistance = 0;
+            animator.SetBool("Attack", false);
+           
+
+        }
+    }
+
+
+
 }

@@ -1,36 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Search_Mage : StateMachineBehaviour
 {
+
+    private Agent script;
+    public float raycas;
+    RaycastHit hit;//rayo
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        script = animator.gameObject.GetComponent<Agent>();
+        //Inicializar y crear variable aget
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+       //Va a la ultima posicion
+        aget.destination = script.UltimaPosicion_Jugador.transform.position;
+        raycas = script.raycas;
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Rayo(animator);
+    }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public void Rayo(Animator animator)
+    {
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
+        Vector3 rayDirection = animator.transform.forward;
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
+
+        if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
+        {
+
+            // Detectar al jugador
+            if (hit.transform.gameObject.tag == "Player")
+            {
+                //vuelve a ver pasa a Pursue
+                animator.SetBool("Search", false);
+                script.Jugador = hit.transform.gameObject;
+
+                
+            }
+
+        }
+    }
+
+
 }
