@@ -36,8 +36,8 @@ public class Attack_Mage : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-       // ataque(animator);
-
+        // ataque(animator);
+        LanzaHechizo(animator);
         Rayo(animator);
 
     }
@@ -69,6 +69,8 @@ public class Attack_Mage : StateMachineBehaviour
         }
     }
 
+    public bool EstaDiedMetros;
+
     public void Rayo(Animator animator)
     {
 
@@ -84,7 +86,7 @@ public class Attack_Mage : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 aget.stoppingDistance = 10;
-                LanzaHechizo(animator);
+                
                 Debug.Log("Sigue atacando");
             }
             else
