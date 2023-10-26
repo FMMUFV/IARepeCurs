@@ -32,7 +32,7 @@ public class Patrol_Mage : StateMachineBehaviour
         raycas = script.raycas;
 
     //-----Puente recojer velocidad inicial------
-    NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
 
         //Asignar el primer destino
