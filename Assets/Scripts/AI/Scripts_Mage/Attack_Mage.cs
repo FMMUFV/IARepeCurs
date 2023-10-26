@@ -86,9 +86,11 @@ public class Attack_Mage : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 aget.stoppingDistance = 10;
-                
+                EstaDiedMetros = true;
                 Debug.Log("Sigue atacando");
             }
+
+     
             else
             {
                 //Solo cuando no esta a una distancia menor de 10 metros
