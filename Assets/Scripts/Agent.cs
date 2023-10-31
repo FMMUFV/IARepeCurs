@@ -9,4 +9,8 @@ public class Agent : MonoBehaviour
     public GameObject Jugador;
     public Vector3 UltimaPosicion_Jugador;
 
+    public bool Ataca = true;
+
+    public float currentTime;
+
 }

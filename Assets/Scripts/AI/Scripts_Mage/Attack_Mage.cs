@@ -1,147 +1,100 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
 
 public class Attack_Mage : StateMachineBehaviour
 {
-    private Agent script;
+    private Agent script; // Referencia al componente "Agent" del personaje
 
-    public bool ataca;
-
-
-    //Tiempo del ataque
+    // Tiempo del ataque
     public float countdownTime = 10.0f; // Tiempo en segundos para la cuenta regresiva
-    private float currentTime;
+    private float currentTime; // Tiempo actual restante antes del próximo ataque
 
+    RaycastHit hit; // Información sobre el raycast (rayo de colisión)
+    public float raycas; // Longitud del rayo de colisión
 
-    RaycastHit hit;//rayo
-    public float raycas;
-
-
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    // OnStateEnter se llama cuando se inicia una transición y se evalúa este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        script = animator.gameObject.GetComponent<Agent>();
+        script = animator.gameObject.GetComponent<Agent>(); // Acceder al componente "Agent" del objeto controlado por el Animator
 
-        //Es para la cuenta atras del ataque
+        // Inicializar el tiempo de ataque
         currentTime = countdownTime;
 
-        raycas = 10;
-        ataca = true;
+        raycas = 10; // Configurar la longitud del rayo de colisión
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    // OnStateUpdate se llama en cada cuadro entre las llamadas de OnStateEnter y OnStateExit
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
-        // ataque(animator);
-        LanzaHechizo(animator);
+        // Realizar el raycast
         Rayo(animator);
 
-    }
-
- 
-    public void ataque(Animator animator)
-    {
-        //Inicializar y crear variable aget
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        //Variable Dist para ver la distancia que hay de su destino
-        float dist = Vector3.Distance(script.Jugador.transform.position, aget.transform.position);
-
-        if (dist < 10)
+        // Si el jugador está a menos de 10 metros, lanzar un hechizo y no moverse
+        if (EstaDiedMetros == true)
         {
-            //Ataca si esta a menos de 10
-            //Lanza un hechizo y no se mueve
-
-            aget.stoppingDistance = 10;
-
             LanzaHechizo(animator);
         }
         else
         {
-            //Solo cuando no esta a una distancia menor de 10 metros
-            aget.stoppingDistance = 0;
+            // Si el jugador se aleja a más de 10 metros, cambiar al estado "Pursue"
             animator.SetBool("Attack", false);
-
-
         }
     }
 
-    public bool EstaDiedMetros;
+    public bool EstaDiedMetros; // Indicador si el jugador está a menos de 10 metros
 
     public void Rayo(Animator animator)
     {
-
         Vector3 rayDirection = animator.transform.forward;
 
         Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
-
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-            NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-
-            // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
-                aget.stoppingDistance = 10;
-                EstaDiedMetros = true;
+                aget.stoppingDistance = 10; // Establecer la distancia de detención al jugador
+                EstaDiedMetros = true; // El jugador está a menos de 10 metros, permitir el ataque
                 Debug.Log("Sigue atacando");
             }
-
-     
             else
             {
-                //Solo cuando no esta a una distancia menor de 10 metros
-                aget.stoppingDistance = 0;
-                animator.SetBool("Attack", false);
-                Debug.Log("pasa a purse");
+                aget.stoppingDistance = 0; // Restablecer la distancia de detención a 0 (no se mueve hacia el jugador)
+                EstaDiedMetros = false; // El jugador está a más de 10 metros, no permitir el ataque
+                Debug.Log("Pasa a Pursue");
+                animator.SetBool("Attack", false); // Cambiar al estado "Pursue"
             }
-
+        }
+        else
+        {
+            aget.stoppingDistance = 0; // Restablecer la distancia de detención a 0 (no se mueve hacia el jugador)
+            EstaDiedMetros = false; // El jugador está a más de 10 metros, no permitir el ataque
+            Debug.Log("Pasa a Pursue");
+            animator.SetBool("Attack", false); // Cambiar al estado "Pursue"
         }
     }
 
-    //-------------------------------
-    //PROBLEMA ARREGLAR
-    //
-    //SE PARA EL CONTADOR CUADO DEJA DE TOCAR EL RAYO HAY QUE HACER QUE EL CONTADOR SIGA POR SU CUENTA
-
-
-    //Aqui hace daño al jugador
     public void LanzaHechizo(Animator animator)
     {
-
-
-
-        //hacion de atacar
-        if(ataca == true)
+        if (script.Ataca == true)
         {
-            script.Jugador.SendMessage("Damage", 1);
+            script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
             Debug.Log("Lanza un hechizo");
-            ataca = false;
+            script.Ataca = false; // Restablecer la capacidad de ataque
         }
-
         else
         {
-            //cuenta atras del ataque
             if (currentTime > 0)
             {
-                currentTime -= Time.deltaTime;
+                currentTime -= Time.deltaTime; // Actualizar el tiempo restante
                 Debug.Log("Tiempo restante: " + currentTime.ToString("0"));
             }
             else
             {
-                currentTime = 0;
-                ataca = true;
-                currentTime = countdownTime;
+                script.Ataca = true; // Activar la capacidad de ataque
+                currentTime = countdownTime; // Restablecer el tiempo de ataque
             }
         }
-
-        
-
-
     }
-
-
 }
