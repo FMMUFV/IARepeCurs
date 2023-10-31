@@ -26,8 +26,9 @@ public class Search_Mage : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        Rayo(animator);
+
+      /*  NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         //Variable Dist para ver la distancia que hay de su destino
         float dist = Vector3.Distance(Destino, aget.transform.position);
 
@@ -41,10 +42,10 @@ public class Search_Mage : StateMachineBehaviour
         else
         {
             Rayo(animator);
-            
+
         }
 
-
+        */
        
     }
 
