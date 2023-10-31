@@ -8,23 +8,26 @@ public class Scan_Mage : StateMachineBehaviour
     RaycastHit hit;//rayo
     private Agent script;
     public float raycas;
+    public float VelocidadRotar = 20f;
+    public Transform RotarEnemigo;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-    
-        
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        aget.stoppingDistance = 10;
+        RotarEnemigo = animator.gameObject.transform;
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        script = animator.gameObject.GetComponent<Agent>();
+       Rayo(animator);
+       raycas = script.raycas;
 
-       // Rayo(animator);
-        raycas = script.raycas;
-
-      //  Rotacion(animator);
+        Rotacion(animator);
     }
 
 
@@ -49,35 +52,24 @@ public class Scan_Mage : StateMachineBehaviour
     }
 
 
-    float x;
+    public float rotacion;
+   
 
     public void Rotacion(Animator animator)
     {
-        x += Time.deltaTime * 10;
 
-        //Inicializar y crear variable aget
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
 
-        aget.transform.rotation = Quaternion.Euler(x, 0, 0);
-
+        rotacion += Time.deltaTime * VelocidadRotar;
+        RotarEnemigo.Rotate(0f, Time.deltaTime * VelocidadRotar, 0f);
+        if(rotacion >= 360)
+        {
+            Debug.Log("Ya a rotado");
+            
+            animator.SetBool("Patrol", true);
+            rotacion = 0f;
+        }
         
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    
 }

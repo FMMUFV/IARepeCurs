@@ -68,7 +68,15 @@ public class Search_Mage : StateMachineBehaviour
 
                 
             }
+            else
+            {
+                animator.SetBool("Scan", true);
+            }
 
+        }
+        else
+        {
+            animator.SetBool("Scan", true);
         }
     }
 

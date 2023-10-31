@@ -8,18 +8,19 @@ public class Attack_Mage : StateMachineBehaviour
 
     // Tiempo del ataque
     public float countdownTime = 10.0f; // Tiempo en segundos para la cuenta regresiva
-    private float currentTime; // Tiempo actual restante antes del próximo ataque
+   
 
     RaycastHit hit; // Información sobre el raycast (rayo de colisión)
     public float raycas; // Longitud del rayo de colisión
 
+    public bool EstaDiedMetros; // Indicador si el jugador está a menos de 10 metros
     // OnStateEnter se llama cuando se inicia una transición y se evalúa este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         script = animator.gameObject.GetComponent<Agent>(); // Acceder al componente "Agent" del objeto controlado por el Animator
 
-        // Inicializar el tiempo de ataque
-        currentTime = countdownTime;
+      
+      
 
         raycas = 10; // Configurar la longitud del rayo de colisión
     }
@@ -42,7 +43,7 @@ public class Attack_Mage : StateMachineBehaviour
         }
     }
 
-    public bool EstaDiedMetros; // Indicador si el jugador está a menos de 10 metros
+  
 
     public void Rayo(Animator animator)
     {
@@ -85,15 +86,15 @@ public class Attack_Mage : StateMachineBehaviour
         }
         else
         {
-            if (currentTime > 0)
+            if (script.currentTime > 0)
             {
-                currentTime -= Time.deltaTime; // Actualizar el tiempo restante
-                Debug.Log("Tiempo restante: " + currentTime.ToString("0"));
+                script.currentTime -= Time.deltaTime; // Actualizar el tiempo restante
+                Debug.Log("Tiempo restante: " + script.currentTime.ToString("0"));
             }
             else
             {
                 script.Ataca = true; // Activar la capacidad de ataque
-                currentTime = countdownTime; // Restablecer el tiempo de ataque
+                script.currentTime = countdownTime; // Restablecer el tiempo de ataque
             }
         }
     }
