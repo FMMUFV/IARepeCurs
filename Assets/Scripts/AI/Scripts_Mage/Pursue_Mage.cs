@@ -12,7 +12,7 @@ public class Pursue_Mage : StateMachineBehaviour
     // OnStateEnter se llama cuando se inicia una transición y se evalúa este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("Pursue", false); 
+       // animator.SetBool("Pursue", false); 
         raycas = 10;
     }
 
@@ -38,6 +38,12 @@ public class Pursue_Mage : StateMachineBehaviour
                 script.UltimaPosicion_Jugador = script.Jugador.transform.position;
                 animator.SetBool("Search", true); // Cambiar al estado "Search"
             }
+        }
+        else
+        {
+            // Solo cuando no está a una distancia menor de 10 metros
+            script.UltimaPosicion_Jugador = script.Jugador.transform.position;
+            animator.SetBool("Search", true); // Cambiar al estado "Search"
         }
     }
 

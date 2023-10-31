@@ -11,6 +11,7 @@ public class Search_Mage : StateMachineBehaviour
     RaycastHit hit;//rayo
     private Vector3 Destino;//Direccion a la que tiene que ir
 
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -24,34 +25,35 @@ public class Search_Mage : StateMachineBehaviour
         raycas = script.raycas;
     }
 
+
+    bool Scan = false;
+
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Rayo(animator);
 
-      /*  NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        //Variable Dist para ver la distancia que hay de su destino
-        float dist = Vector3.Distance(Destino, aget.transform.position);
+    
+        //Si a llegado a scan
+             NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+                    //Variable Dist para ver la distancia que hay de su destino
+                    float dist = Vector3.Distance(Destino, aget.transform.position);
 
-        //Si a llegado o esta posicion pasa a scad
-        if(dist < 1)
-        {
-            
-            animator.SetBool("Scan", true);
-           
-        }
-        else
-        {
-            Rayo(animator);
+                    //Si a llegado o esta posicion pasa a scad
+                    if(dist < 1)
+                    {
 
-        }
+                // animator.SetBool("Scan", true);
+                       Scan = true;
 
-        */
-       
+                    }
+                    
     }
 
     public void Rayo(Animator animator)
     {
+        
+
 
         Vector3 rayDirection = animator.transform.forward;
 
@@ -71,13 +73,20 @@ public class Search_Mage : StateMachineBehaviour
             }
             else
             {
-                animator.SetBool("Scan", true);
+                if (Scan == true)
+                {
+                    animator.SetBool("Scan", true);
+                }
+
             }
 
         }
         else
         {
-            animator.SetBool("Scan", true);
+            if (Scan == true)
+            {
+                animator.SetBool("Scan", true);
+            }
         }
     }
 

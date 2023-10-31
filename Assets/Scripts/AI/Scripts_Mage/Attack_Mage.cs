@@ -7,7 +7,7 @@ public class Attack_Mage : StateMachineBehaviour
     private Agent script; // Referencia al componente "Agent" del personaje
 
     // Tiempo del ataque
-    public float countdownTime = 5.0f; // Tiempo en segundos para la cuenta regresiva
+    public float countdownTime = 3.0f; // Tiempo en segundos para la cuenta regresiva
    
 
     RaycastHit hit; // Información sobre el raycast (rayo de colisión)
