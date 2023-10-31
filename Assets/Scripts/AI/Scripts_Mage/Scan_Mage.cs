@@ -10,6 +10,8 @@ public class Scan_Mage : StateMachineBehaviour
     public float raycas;
     public float VelocidadRotar = 20f;
     public Transform RotarEnemigo;
+    public float rotacion;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -46,13 +48,14 @@ public class Scan_Mage : StateMachineBehaviour
             {
                 animator.SetBool("Pursue", true);
                 script.Jugador = hit.transform.gameObject;
+                Debug.Log("Pasa a purse");
             }
 
         }
     }
 
 
-    public float rotacion;
+  
    
 
     public void Rotacion(Animator animator)
