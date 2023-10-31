@@ -20,6 +20,7 @@ public class Search_Mage : StateMachineBehaviour
         //Va a la ultima posicion
         Destino = script.UltimaPosicion_Jugador;
         aget.destination = Destino;
+        aget.stoppingDistance = 0;
         raycas = script.raycas;
     }
 
