@@ -22,8 +22,9 @@ public class Flee_Minion : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+
+        //Se comprueba que este lejos del jugador si lo esta volvera al estdo patrulla
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        //Variable Dist para ver la distancia que hay de su destino
         float dist = Vector3.Distance(aget.transform.position, script.Jugador.transform.position);
         if(dist > 15)
         {
