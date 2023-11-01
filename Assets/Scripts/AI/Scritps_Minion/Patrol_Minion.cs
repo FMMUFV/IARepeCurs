@@ -23,6 +23,8 @@ public class Patrol_Minion : StateMachineBehaviour
      RaycastHit hit;//rayo
     public float raycas;
 
+    public GameObject Jugador;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -120,8 +122,8 @@ public class Patrol_Minion : StateMachineBehaviour
     }
 
 
-    public GameObject Jugador;
-        public void Rayo(Animator animator)
+  
+    public void Rayo(Animator animator)
         {
 
         // Obtener la dirección del rayo en función de la rotación del animator
@@ -133,26 +135,31 @@ public class Patrol_Minion : StateMachineBehaviour
         // Realiza un raycast y almacena la información de colisión en 'hit'
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
+     
+
             // Comprobar si el objeto golpeado tiene una etiqueta "Player"
-            if (hit.transform.gameObject.tag == "Player")
+             if (hit.transform.gameObject.tag == "Player")
             {
+                Debug.Log("Patrol_Player: " + hit.transform.gameObject.tag);
                 // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
                 Jugador = hit.transform.gameObject;
-               
+
                 scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
 
-                if(scritc.Vidas <= 1)
+                if (scritc.Vidas <= 1)
                 {
-                   // Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
+                    // Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
                     animator.SetBool("Flee", true);
                 }
-                else
+                else if (scritc.Vidas > 1)
                 {
-                   //  Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue" );
+                    Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue");
+                    animator.SetBool("Patrol", false);
                     animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
-
+                    
                 }
             }
+
         }
 
     }
