@@ -153,7 +153,7 @@ public class Patrol_Minion : StateMachineBehaviour
                 }
                 else if (scritc.Vidas > 1)
                 {
-                    Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue");
+                   
                     animator.SetBool("Patrol", false);
                     animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
                     

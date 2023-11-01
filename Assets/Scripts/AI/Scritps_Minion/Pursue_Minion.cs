@@ -9,7 +9,7 @@ public class Pursue_Minion : StateMachineBehaviour
     public float raycas;
 
     // Variable para almacenar la distancia de ataque deseada
-    float distanciaDeAtaque = 1.0f;
+    float distanciaDeAtaque = 1f;
 
     public float countdownTime = 5.0f; // Tiempo inicial de la cuenta atrás en segundos
     public float currentTime;
@@ -61,28 +61,25 @@ public class Pursue_Minion : StateMachineBehaviour
                     // El jugador está a una distancia de ataque, así que ataca
                     Debug.Log("Atacando al jugador");
                     aget.stoppingDistance = 10;
-                    //animator.SetBool("Attack", true);
+                    animator.SetBool("Attack", true);
                     // Puedes agregar lógica para ejecutar el ataque aquí
                 }
                 else
                 {
                     // El jugador está fuera de la distancia de ataque, así que persigue
 
-                    // Configura la posición de destino del enemigo al jugador
+                    // Configura la posición de destino del enemigo al jugadorÇ
+                    Debug.Log("ESTA LEJOS");
                     aget.stoppingDistance = 0;
                     aget.destination = hit.transform.position;
                 }
             }
-            else {
+            else 
+            {
                 animator.SetBool("Pursue", false);
-                animator.SetBool("Patrol", true); }
+                animator.SetBool("Patrol", true); 
+            }
         }
-        /*else {
-
-            //Contador(animator);
-           // animator.SetTrigger("Patrol_1");
-
-        }*/
 
 
 
