@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414729, b: 0.121078685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22585,6 +22585,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMage_00002
       objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37749,6 +37754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonMage_00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}

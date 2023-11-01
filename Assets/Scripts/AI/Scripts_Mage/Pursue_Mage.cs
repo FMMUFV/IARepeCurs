@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class Pursue_Mage : StateMachineBehaviour
 {
     private Agent script;
-    RaycastHit hit; // Información sobre el raycast (rayo de colisión)
+    RaycastHit hit; // Informaciï¿½n sobre el raycast (rayo de colisiï¿½n)
     public float raycas;
 
-    // OnStateEnter se llama cuando se inicia una transición y se evalúa este estado
+    // OnStateEnter se llama cuando se inicia una transiciï¿½n y se evalï¿½a este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        // animator.SetBool("Pursue", false); 
         raycas = 10;
+
+        
     }
 
     // OnStateUpdate se llama en cada cuadro entre las llamadas de OnStateEnter y OnStateExit
@@ -34,17 +35,19 @@ public class Pursue_Mage : StateMachineBehaviour
             }
             else
             {
-                // Solo cuando no está a una distancia menor de 10 metros
+                // Solo cuando no estï¿½ a una distancia menor de 10 metros
                 script.UltimaPosicion_Jugador = script.Jugador.transform.position;
                 animator.SetBool("Search", true); // Cambiar al estado "Search"
             }
         }
         else
         {
-            // Solo cuando no está a una distancia menor de 10 metros
+            // Solo cuando no estï¿½ a una distancia menor de 10 metros
             script.UltimaPosicion_Jugador = script.Jugador.transform.position;
             animator.SetBool("Search", true); // Cambiar al estado "Search"
         }
+
+     
     }
 
 
@@ -61,15 +64,21 @@ public void medirDistancia(Animator animator)
 
         if (dist < 10)
         {
-            // Pasar a "Attack" cuando el jugador está a una distancia menor que 10 metros
+            // Pasar a "Attack" cuando el jugador estï¿½ a una distancia menor que 10 metros
             animator.SetBool("Attack", true);
             Debug.Log("Pasa a atacar");
         }
         else
         {
-            // Solo cuando no está a una distancia menor de 10 metros
+            // Solo cuando no estï¿½ a una distancia menor de 10 metros
             script.UltimaPosicion_Jugador = script.Jugador.transform.position;
             animator.SetBool("Search", true); // Cambiar al estado "Search"
         }
+    }
+
+    public void Rayo(Animator animator)
+    {
+        Debug.Log("prueba");
+        
     }
 }

@@ -131,11 +131,13 @@ public class Patrol_Mage : StateMachineBehaviour
             {
                 animator.SetBool("Pursue", true);
                 script.Jugador = hit.transform.gameObject;
+                
             }
 
         }
     }
 
+    
 
 
 }

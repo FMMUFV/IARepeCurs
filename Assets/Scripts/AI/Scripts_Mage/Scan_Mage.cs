@@ -67,9 +67,9 @@ public class Scan_Mage : StateMachineBehaviour
         if(rotacion >= 360)
         {
             Debug.Log("Ya a rotado");
-            
-            animator.SetBool("Patrol", true);
             rotacion = 0f;
+            animator.SetBool("Patrol", true);
+            
         }
         
     }

@@ -1,8 +1,9 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class Patrol_Minion : StateMachineBehaviour
 {
     private Transform Destino;//Direccion a la que tiene que ir
@@ -19,6 +20,10 @@ public class Patrol_Minion : StateMachineBehaviour
 
     private bool EnlaArena = false;
 
+     RaycastHit hit;//rayo
+    public float raycas;
+
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -33,6 +38,7 @@ public class Patrol_Minion : StateMachineBehaviour
 
         //Asignar el primer destino
         Destino = ListaWaypoints[0];
+        raycas = scritc.raycas;
 
     }
 
@@ -43,6 +49,7 @@ public class Patrol_Minion : StateMachineBehaviour
         patrulla(animator);
         EnPuente(animator);
 
+        Rayo(animator);
 
     }
 
@@ -111,4 +118,29 @@ public class Patrol_Minion : StateMachineBehaviour
         aget.destination = Destino.position;
 
     }
+
+        public void Rayo(Animator animator)
+        {
+       
+        Vector3 rayDirection =  animator.transform.forward;
+
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
+
+        if(Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
+        {
+  
+        // Detectar al jugador
+            if (hit.transform.gameObject.tag == "Player")
+            {
+               Debug.Log("pursue");
+               animator.SetBool("Pursue", true);
+               scritc.Jugador = hit.transform.gameObject;
+            }
+
+        }
+
+
+        }
+
 }
+
