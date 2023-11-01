@@ -121,26 +121,39 @@ public class Patrol_Minion : StateMachineBehaviour
 
         public void Rayo(Animator animator)
         {
-       
-        Vector3 rayDirection =  animator.transform.forward;
 
+        // Obtener la dirección del rayo en función de la rotación del animator
+        Vector3 rayDirection = animator.transform.forward;
+
+        // Dibuja un rayo de depuración (para visualización en el Editor de Unity)
         Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
 
-        if(Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
+        // Realiza un raycast y almacena la información de colisión en 'hit'
+        if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-  
-        // Detectar al jugador
+            // Comprobar si el objeto golpeado tiene una etiqueta "Player"
             if (hit.transform.gameObject.tag == "Player")
             {
-               Debug.Log("pursue");
-               animator.SetBool("Pursue", true);
-               scritc.Jugador = hit.transform.gameObject;
+                // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
+              
+               
+                scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
+
+                if(scritc.Vidas <= 1)
+                {
+                    Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
+                    animator.SetBool("Flee", true);
+                }
+                else
+                {
+                     Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue" );
+                    animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
+
+                }
             }
-
         }
 
-
-        }
+    }
 
 }
 

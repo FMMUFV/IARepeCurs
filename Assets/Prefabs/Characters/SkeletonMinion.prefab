@@ -837,10 +837,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1752082578601051737}
   - component: {fileID: 367353414903011953}
-  - component: {fileID: 100575990432979090}
   - component: {fileID: 1201458175413387261}
   - component: {fileID: 7111433064007805160}
   - component: {fileID: 8662382841862121417}
+  - component: {fileID: 5287288977421024062}
   m_Layer: 0
   m_Name: SkeletonMinion
   m_TagString: Enemy
@@ -939,10 +939,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3625503673784234523, guid: 0d328c1b83dbeec4eba9f61ad904ec2d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 100575990432979090}
-    - targetCorrespondingSourceObject: {fileID: 3625503673784234523, guid: 0d328c1b83dbeec4eba9f61ad904ec2d,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1201458175413387261}
     - targetCorrespondingSourceObject: {fileID: 3625503673784234523, guid: 0d328c1b83dbeec4eba9f61ad904ec2d,
         type: 3}
@@ -952,6 +948,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8662382841862121417}
+    - targetCorrespondingSourceObject: {fileID: 3625503673784234523, guid: 0d328c1b83dbeec4eba9f61ad904ec2d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5287288977421024062}
   m_SourcePrefab: {fileID: 100100000, guid: 0d328c1b83dbeec4eba9f61ad904ec2d, type: 3}
 --- !u!95 &367353414903011953
 Animator:
@@ -975,24 +975,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &100575990432979090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315706842449237230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycas: 5
-  ListaWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!195 &1201458175413387261
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1065,3 +1047,26 @@ CapsuleCollider:
   m_Height: 1.7253135
   m_Direction: 1
   m_Center: {x: 0, y: 0.7926567, z: 0}
+--- !u!114 &5287288977421024062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315706842449237230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycas: 5
+  ListaWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Jugador: {fileID: 0}
+  UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
+  Ataca: 1
+  currentTime: 0
+  Vidas: 3
