@@ -119,6 +119,8 @@ public class Patrol_Minion : StateMachineBehaviour
 
     }
 
+
+    public GameObject Jugador;
         public void Rayo(Animator animator)
         {
 
@@ -135,18 +137,18 @@ public class Patrol_Minion : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
-              
+                Jugador = hit.transform.gameObject;
                
                 scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
 
                 if(scritc.Vidas <= 1)
                 {
-                    Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
+                   // Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
                     animator.SetBool("Flee", true);
                 }
                 else
                 {
-                     Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue" );
+                   //  Debug.Log("Tiene 2 o mas" + scritc.Vidas + "Pasa a Pursue" );
                     animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
 
                 }
