@@ -59,8 +59,8 @@ public class Pursue_Minion : StateMachineBehaviour
                 if (distanciaAlJugador < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
-                  
-                    aget.stoppingDistance = 10;
+
+                    
                     animator.SetBool("Attack", true);
                     // Puedes agregar lógica para ejecutar el ataque aquí
                 }
@@ -115,4 +115,7 @@ public class Pursue_Minion : StateMachineBehaviour
             animator.SetTrigger("Patrol_1");
             }
         }
+
+
+    
 }

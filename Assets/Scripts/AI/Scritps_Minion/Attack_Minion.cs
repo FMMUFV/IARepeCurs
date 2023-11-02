@@ -17,25 +17,28 @@ public class Attack_Minion : StateMachineBehaviour
     public float currentTime;
 
     public bool AtacaDeNuevo;
+    NavMeshAgent aget;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        aget = animator.GetComponent<NavMeshAgent>();
         AtacaDeNuevo = true;
         // Configura el tiempo actual con el valor inicial
         currentTime = countdownTime;
+        aget.isStopped = true;
+        Rayo(animator);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Rayo(animator);
+        Contados(animator);
     }
 
     public void Rayo(Animator animator)
     {
         script = animator.gameObject.GetComponent<Agent>();
         raycas = script.raycas;
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         // Obtener la dirección del rayo en función de la rotación del animator
         Vector3 rayDirection = animator.transform.forward;
 
@@ -50,52 +53,38 @@ public class Attack_Minion : StateMachineBehaviour
 
             if (hit.transform.gameObject.tag == "Player")
             {
-
-                float distanciaAlJugador = Vector3.Distance(animator.transform.position, hit.transform.position);
-
-                if (distanciaAlJugador < distanciaDeAtaque)
+                if (hit.distance < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
-                    aget.stoppingDistance = 10;
-                    
-                    if(AtacaDeNuevo == true)
-                    {
-                       script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
-                       AtacaDeNuevo = false;
-                    }
-                    Contados(animator);
-                    
-                    
+                    script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
+
+
                     // Puedes agregar lógica para ejecutar el ataque aquí
                 }
                 else
                 {
-                    aget.stoppingDistance = 0;
                     animator.SetBool("Attack", false);
-                    animator.SetBool("Pursue", true);
                 }
             }
             else
             {
-                aget.stoppingDistance = 0;
                 animator.SetBool("Attack", false);
-                animator.SetBool("Pursue", true);
             }
         }
         else
         {
-            aget.stoppingDistance = 0;
             animator.SetBool("Attack", false);
-            animator.SetBool("Pursue", true);
         }
-
-
-
     }
 
- 
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
 
-   public void Contados(Animator animator)
+        aget.isStopped = false;
+    }
+
+
+    public void Contados(Animator animator)
     {
 
 
@@ -110,8 +99,7 @@ public class Attack_Minion : StateMachineBehaviour
         else
         {
             // La cuenta atrás ha llegado a cero, puedes agregar acciones aquí
-            AtacaDeNuevo = true;
-            currentTime = countdownTime;
+            animator.SetBool("Attack", false);
 
         }
     }
