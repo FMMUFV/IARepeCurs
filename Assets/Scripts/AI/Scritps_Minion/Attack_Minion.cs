@@ -10,7 +10,7 @@ public class Attack_Minion : StateMachineBehaviour
     public float raycas;
     private Agent script;
     // Variable para almacenar la distancia de ataque deseada
-    float distanciaDeAtaque = 1f;
+    float distanciaDeAtaque = 1.3f;
 
 
     public float countdownTime = 3.0f; // Tiempo inicial de la cuenta atrás en segundos
@@ -82,8 +82,14 @@ public class Attack_Minion : StateMachineBehaviour
                 animator.SetBool("Pursue", true);
             }
         }
+        else
+        {
+            aget.stoppingDistance = 0;
+            animator.SetBool("Attack", false);
+            animator.SetBool("Pursue", true);
+        }
 
-       
+
 
     }
 
