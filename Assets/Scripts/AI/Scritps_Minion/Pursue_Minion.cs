@@ -76,9 +76,16 @@ public class Pursue_Minion : StateMachineBehaviour
             }
             else 
             {
+                animator.SetBool("Attack", false);
                 animator.SetBool("Pursue", false);
                 animator.SetBool("Patrol", true); 
             }
+        }
+        else
+        {
+            animator.SetBool("Attack", false);
+            animator.SetBool("Pursue", false);
+            animator.SetBool("Patrol", true);
         }
 
 

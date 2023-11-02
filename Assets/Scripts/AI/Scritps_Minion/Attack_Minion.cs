@@ -75,13 +75,12 @@ public class Attack_Minion : StateMachineBehaviour
                     animator.SetBool("Pursue", true);
                 }
             }
-           /* else
+            else
             {
                 aget.stoppingDistance = 0;
                 animator.SetBool("Attack", false);
                 animator.SetBool("Pursue", true);
-                
-            }*/
+            }
         }
 
        
