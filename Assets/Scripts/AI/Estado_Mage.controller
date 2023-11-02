@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086b8af1d73d6bc4cba76030edc0c5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 10
+  countdownTime: 3
   raycas: 0
   EstaDiedMetros: 0
+  currentTime: 0
+  AtacaDeNuevo: 0
