@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     }
     public delegate void OnValueUpdate(int ammount);
     public event OnValueUpdate OnHealthUpdate;
-
+    [HideInInspector]
     public int m_Health;
 
     
@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
 
     public void Damage(int ammount)
     {
+        
         m_Health -= ammount;
         OnHealthUpdate?.Invoke(m_Health);
         if (m_Health <= 0)
