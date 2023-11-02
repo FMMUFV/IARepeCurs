@@ -94,27 +94,7 @@ public class Pursue_Minion : StateMachineBehaviour
 
 
 
-    public void Contador(Animator animator)
-    {
-               
-        
-            // Verifica si el tiempo actual es mayor que 0
-            if (currentTime > 0)
-            {
-                // Reduce el tiempo actual en cada fotograma
-                currentTime -= Time.deltaTime;
-
-            // Muestra el tiempo actual en la consola (puedes adaptarlo para mostrarlo en una UI)
-        }
-        else
-            {
-                // La cuenta atrás ha llegado a cero, puedes agregar acciones aquí
-              
-                currentTime = countdownTime;
-            //animator.SetBool("Patrol", true);
-            animator.SetTrigger("Patrol_1");
-            }
-        }
+  
 
 
     
