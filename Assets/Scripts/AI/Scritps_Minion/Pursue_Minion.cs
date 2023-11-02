@@ -65,7 +65,7 @@ public class Pursue_Minion : StateMachineBehaviour
 
                     // Configura la posición de destino del enemigo al jugadorÇ
                     
-                    aget.stoppingDistance = 0;
+                   
                     aget.destination = hit.transform.position;
                 }
             }

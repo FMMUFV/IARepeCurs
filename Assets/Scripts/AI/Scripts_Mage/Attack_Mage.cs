@@ -19,6 +19,8 @@ public class Attack_Mage : StateMachineBehaviour
     public float currentTime;
     public bool AtacaDeNuevo;
     float distanciaDeAtaque = 10f;
+
+     NavMeshAgent aget;
     // OnStateEnter se llama cuando se inicia una transición y se evalúa este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -28,6 +30,7 @@ public class Attack_Mage : StateMachineBehaviour
         AtacaDeNuevo = true;
         // Configura el tiempo actual con el valor inicial
         currentTime = countdownTime;
+        aget = animator.GetComponent<NavMeshAgent>();
     }
 
     // OnStateUpdate se llama en cada cuadro entre las llamadas de OnStateEnter y OnStateExit
@@ -43,7 +46,7 @@ public class Attack_Mage : StateMachineBehaviour
     {
         script = animator.gameObject.GetComponent<Agent>();
         raycas = script.raycas;
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        
         // Obtener la dirección del rayo en función de la rotación del animator
         Vector3 rayDirection = animator.transform.forward;
 
@@ -64,7 +67,7 @@ public class Attack_Mage : StateMachineBehaviour
                 if (distanciaAlJugador < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
-                    aget.stoppingDistance = 10;
+                    aget.isStopped = true;
 
                     if (AtacaDeNuevo == true)
                     {
@@ -78,7 +81,7 @@ public class Attack_Mage : StateMachineBehaviour
                 }
                 else
                 {
-                    aget.stoppingDistance = 0;
+                    aget.isStopped = false;
                     animator.SetBool("Attack", false);
                     animator.SetBool("Pursue", true);
                 }
@@ -96,7 +99,11 @@ public class Attack_Mage : StateMachineBehaviour
 
     }
 
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
 
+        aget.isStopped = false;
+    }
 
     public void Contados(Animator animator)
     {
@@ -112,11 +119,9 @@ public class Attack_Mage : StateMachineBehaviour
         }
         else
         {
-            // La cuenta atrás ha llegado a cero, puedes agregar acciones aquí
-            AtacaDeNuevo = true;
+   
             currentTime = countdownTime;
-            //animator.SetBool("Patrol", true);
-            animator.SetTrigger("Patrol_1");
+          
         }
     }
 

@@ -17,7 +17,7 @@ public class Scan_Mage : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        aget.stoppingDistance = 10;
+        aget.isStopped = true;
         RotarEnemigo = animator.gameObject.transform;
 
     }

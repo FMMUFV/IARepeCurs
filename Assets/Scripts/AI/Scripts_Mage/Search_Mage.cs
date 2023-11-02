@@ -19,10 +19,10 @@ public class Search_Mage : StateMachineBehaviour
         //Inicializar y crear variable aget
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
 
-        
-        
-       
-        aget.stoppingDistance = 0;
+
+
+
+        aget.isStopped = false;
         raycas = script.raycas;
     }
 
@@ -80,7 +80,7 @@ public class Search_Mage : StateMachineBehaviour
                 {
                     // El jugador está a una distancia de ataque, así que ataca
 
-                    aget.stoppingDistance = 10;
+                    aget.isStopped = true;
 
                     //-----------Tengo que programar que a llegado donde estaba el jugador y pase a scan
                     animator.SetBool("Search", false);
@@ -89,12 +89,12 @@ public class Search_Mage : StateMachineBehaviour
 
                 }
                 else
-                {       
+                {
                     // El jugador está fuera de la distancia de ataque, así que persigue
 
                     // Configura la posición de destino del enemigo al jugadorÇ
 
-                    aget.stoppingDistance = 0;
+                    aget.isStopped = false;
                     aget.destination = script.UltimaPosicion_Jugador;
                 }
             }

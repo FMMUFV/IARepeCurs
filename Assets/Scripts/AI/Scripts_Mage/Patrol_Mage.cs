@@ -34,7 +34,7 @@ public class Patrol_Mage : StateMachineBehaviour
     //-----Puente recojer velocidad inicial------
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
-        aget.stoppingDistance = 0;
+        aget.isStopped = false;
         //Asignar el primer destino
         Destino = ListaWaypoints[0];
 

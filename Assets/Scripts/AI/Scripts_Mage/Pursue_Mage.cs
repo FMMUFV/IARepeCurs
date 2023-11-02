@@ -52,7 +52,7 @@ public class Pursue_Mage : StateMachineBehaviour
                 {
                     // El jugador está a una distancia de ataque, así que ataca
 
-                    aget.stoppingDistance = 10;
+                    aget.isStopped = true;
                     animator.SetBool("Attack", true);
                     // Puedes agregar lógica para ejecutar el ataque aquí
                 }
@@ -62,7 +62,7 @@ public class Pursue_Mage : StateMachineBehaviour
 
                     // Configura la posición de destino del enemigo al jugadorÇ
 
-                    aget.stoppingDistance = 0;
+                    aget.isStopped = false;
                     aget.destination = hit.transform.position;
                 }
             }
