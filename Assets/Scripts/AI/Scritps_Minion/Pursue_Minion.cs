@@ -84,6 +84,9 @@ public class Pursue_Minion : StateMachineBehaviour
 
 
     }
+
+
+
     public void Contador(Animator animator)
     {
                

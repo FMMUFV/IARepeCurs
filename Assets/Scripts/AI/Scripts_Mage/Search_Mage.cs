@@ -11,16 +11,17 @@ public class Search_Mage : StateMachineBehaviour
     RaycastHit hit;//rayo
     private Vector3 Destino;//Direccion a la que tiene que ir
 
-
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         script = animator.gameObject.GetComponent<Agent>();
         //Inicializar y crear variable aget
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        //Va a la ultima posicion
-        Destino = script.UltimaPosicion_Jugador;
-        aget.destination = Destino;
+
+        
+        
+       
         aget.stoppingDistance = 0;
         raycas = script.raycas;
     }
@@ -33,7 +34,7 @@ public class Search_Mage : StateMachineBehaviour
     {
         Rayo(animator);
 
-    
+    /*
         //Si a llegado a scan
              NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
                     //Variable Dist para ver la distancia que hay de su destino
@@ -47,13 +48,14 @@ public class Search_Mage : StateMachineBehaviour
                        Scan = true;
 
                     }
-                    
+           */         
     }
 
     public void Rayo(Animator animator)
     {
-        
 
+        float DistanciaVePorUltimavez = 1f;
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
 
         Vector3 rayDirection = animator.transform.forward;
 
@@ -62,33 +64,38 @@ public class Search_Mage : StateMachineBehaviour
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
 
-            // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
-                //vuelve a ver pasa a Pursue
                 animator.SetBool("Search", false);
-                script.Jugador = hit.transform.gameObject;
+                animator.SetBool("Pursue", true);
 
                 
             }
             else
             {
-                if (Scan == true)
+                //Aqui tiene que ir a la ultima posicion del jugador
+                float distanciaAlJugador = Vector3.Distance(animator.transform.position, script.UltimaPosicion_Jugador);
+
+                if (distanciaAlJugador < DistanciaVePorUltimavez)
                 {
-                    animator.SetBool("Scan", true);
+                    // El jugador está a una distancia de ataque, así que ataca
+
+                    aget.stoppingDistance = 10;
+                   
+
+                    // Puedes agregar lógica para ejecutar el ataque aquí
                 }
+                else
+                {
+                    // El jugador está fuera de la distancia de ataque, así que persigue
 
-            }
+                    // Configura la posición de destino del enemigo al jugadorÇ
 
-        }
-        else
-        {
-            if (Scan == true)
-            {
-                animator.SetBool("Scan", true);
+                    aget.stoppingDistance = 0;
+                    aget.destination = script.UltimaPosicion_Jugador;
+                }
             }
         }
+
     }
-
-
 }

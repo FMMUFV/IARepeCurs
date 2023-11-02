@@ -12,73 +12,75 @@ public class Pursue_Mage : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        // animator.SetBool("Pursue", false); 
-        raycas = 10;
+      
 
-        
+       
     }
 
     // OnStateUpdate se llama en cada cuadro entre las llamadas de OnStateEnter y OnStateExit
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         script = animator.gameObject.GetComponent<Agent>();
+
+        Rayo(animator);
+       
+    }
+
+    private  float distanciaDeAtaque = 10f;
+    public void Rayo(Animator animator)
+    {
+        raycas = script.raycas;
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        // Obtener la dirección del rayo en función de la rotación del animator
         Vector3 rayDirection = animator.transform.forward;
 
-        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
-        NavMeshAgent aget = animator.GetComponent <NavMeshAgent>();
+        // Dibuja un rayo de depuración (para visualización en el Editor de Unity)
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
+
+        // Realiza un raycast y almacena la información de colisión en 'hit'
+
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-            // Detectar al jugador
+            // Comprobar si el objeto golpeado tiene una etiqueta "Player"
+
             if (hit.transform.gameObject.tag == "Player")
             {
-                animator.SetBool("Attack", true); // Cambiar al estado "Attack"
-                Debug.Log("Pasa a atacar");
+                script.UltimaPosicion_Jugador = hit.transform.gameObject.transform.position;
+                float distanciaAlJugador = Vector3.Distance(animator.transform.position, hit.transform.position);
+
+                if (distanciaAlJugador < distanciaDeAtaque)
+                {
+                    // El jugador está a una distancia de ataque, así que ataca
+
+                    aget.stoppingDistance = 10;
+                    animator.SetBool("Attack", true);
+                    // Puedes agregar lógica para ejecutar el ataque aquí
+                }
+                else
+                {
+                    // El jugador está fuera de la distancia de ataque, así que persigue
+
+                    // Configura la posición de destino del enemigo al jugadorÇ
+
+                    aget.stoppingDistance = 0;
+                    aget.destination = hit.transform.position;
+                }
             }
             else
             {
-                // Solo cuando no est� a una distancia menor de 10 metros
-                script.UltimaPosicion_Jugador = script.Jugador.transform.position;
-                animator.SetBool("Search", true); // Cambiar al estado "Search"
+                
+                animator.SetBool("Pursue", false);
+                animator.SetBool("Search", true);
             }
         }
-        else
-        {
-            // Solo cuando no est� a una distancia menor de 10 metros
-            script.UltimaPosicion_Jugador = script.Jugador.transform.position;
-            animator.SetBool("Search", true); // Cambiar al estado "Search"
-        }
 
-     
+
+
     }
 
 
 
 
 
-public void medirDistancia(Animator animator)
-    {
-        script = animator.gameObject.GetComponent<Agent>();
-        // Inicializar y crear variable aget
-        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        // Variable "dist" para ver la distancia que hay entre el personaje y el jugador
-        float dist = Vector3.Distance(script.Jugador.transform.position, aget.transform.position);
 
-        if (dist < 10)
-        {
-            // Pasar a "Attack" cuando el jugador est� a una distancia menor que 10 metros
-            animator.SetBool("Attack", true);
-            Debug.Log("Pasa a atacar");
-        }
-        else
-        {
-            // Solo cuando no est� a una distancia menor de 10 metros
-            script.UltimaPosicion_Jugador = script.Jugador.transform.position;
-            animator.SetBool("Search", true); // Cambiar al estado "Search"
-        }
-    }
-
-    public void Rayo(Animator animator)
-    {
-        Debug.Log("prueba");
-        
-    }
 }

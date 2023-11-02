@@ -14,4 +14,6 @@ public class Agent : MonoBehaviour
     public float currentTime;
 
     public int Vidas = 3;
+
+  
 }

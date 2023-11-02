@@ -129,7 +129,9 @@ public class Patrol_Mage : StateMachineBehaviour
         // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
+                animator.SetBool("Patrol", false);
                 animator.SetBool("Pursue", true);
+                
                 script.Jugador = hit.transform.gameObject;
                 
             }
