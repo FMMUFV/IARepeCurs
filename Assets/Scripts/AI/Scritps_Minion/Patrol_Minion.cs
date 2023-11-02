@@ -140,7 +140,7 @@ public class Patrol_Minion : StateMachineBehaviour
             // Comprobar si el objeto golpeado tiene una etiqueta "Player"
              if (hit.transform.gameObject.tag == "Player")
             {
-                Debug.Log("Patrol_Player: " + hit.transform.gameObject.tag);
+                
                 // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
                 Jugador = hit.transform.gameObject;
 
