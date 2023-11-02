@@ -46,9 +46,11 @@ public class Scan_Mage : StateMachineBehaviour
             // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
+                animator.SetBool("Scan", false);
+                animator.SetBool("Patrol", false);
                 animator.SetBool("Pursue", true);
                 script.Jugador = hit.transform.gameObject;
-                Debug.Log("Pasa a purse");
+                
             }
 
         }
@@ -66,8 +68,13 @@ public class Scan_Mage : StateMachineBehaviour
         RotarEnemigo.Rotate(0f, Time.deltaTime * VelocidadRotar, 0f);
         if(rotacion >= 360)
         {
+            //La rotacion esta completa por lo tanto tiene que ir a patrol
+
+            //Y cortar los otros caminos activados
             Debug.Log("Ya a rotado");
             rotacion = 0f;
+            animator.SetBool("Pursue", false);
+            animator.SetBool("Scan", false);
             animator.SetBool("Patrol", true);
             
         }

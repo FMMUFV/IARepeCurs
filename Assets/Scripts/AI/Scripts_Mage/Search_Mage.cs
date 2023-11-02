@@ -81,12 +81,15 @@ public class Search_Mage : StateMachineBehaviour
                     // El jugador está a una distancia de ataque, así que ataca
 
                     aget.stoppingDistance = 10;
-                   
 
-                    // Puedes agregar lógica para ejecutar el ataque aquí
+                    //-----------Tengo que programar que a llegado donde estaba el jugador y pase a scan
+                    animator.SetBool("Search", false);
+                    animator.SetBool("Pursue", false);
+                    animator.SetBool("Scan", true);
+
                 }
                 else
-                {
+                {       
                     // El jugador está fuera de la distancia de ataque, así que persigue
 
                     // Configura la posición de destino del enemigo al jugadorÇ
