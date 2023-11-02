@@ -31,6 +31,7 @@ public class Attack_Mage : StateMachineBehaviour
         // Configura el tiempo actual con el valor inicial
         currentTime = countdownTime;
         aget = animator.GetComponent<NavMeshAgent>();
+       
     }
 
     // OnStateUpdate se llama en cada cuadro entre las llamadas de OnStateEnter y OnStateExit
@@ -40,6 +41,12 @@ public class Attack_Mage : StateMachineBehaviour
         Rayo(animator);
      
 
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+
+        aget.isStopped = false;
     }
 
     public void Rayo(Animator animator)
@@ -62,9 +69,9 @@ public class Attack_Mage : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
 
-                float distanciaAlJugador = Vector3.Distance(animator.transform.position, hit.transform.position);
+              
 
-                if (distanciaAlJugador < distanciaDeAtaque)
+                if (hit.distance < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
                     aget.isStopped = true;
@@ -88,7 +95,7 @@ public class Attack_Mage : StateMachineBehaviour
             }
              else
              {
-                 aget.stoppingDistance = 0;
+                 aget.isStopped = false;
                  animator.SetBool("Attack", false);
                  animator.SetBool("Pursue", true);
 
@@ -99,11 +106,7 @@ public class Attack_Mage : StateMachineBehaviour
 
     }
 
-    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
 
-        aget.isStopped = false;
-    }
 
     public void Contados(Animator animator)
     {

@@ -26,11 +26,14 @@ public class Health : MonoBehaviour
         OnHealthUpdate?.Invoke(m_Health);
         if (m_Health <= 0)
         {
+          
             if(Player == true)
             {
                 SceneManager.LoadScene(0);
             }
-            
+            {
+                Debug.Log("Enemigo");
+            }
         }
     }
 }
