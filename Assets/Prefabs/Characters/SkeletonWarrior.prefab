@@ -800,6 +800,7 @@ GameObject:
   - component: {fileID: 1765151928039986248}
   - component: {fileID: 6635988247259131198}
   - component: {fileID: 2130443931360386602}
+  - component: {fileID: 3528948089888917074}
   m_Layer: 0
   m_Name: SkeletonWarrior
   m_TagString: Enemy
@@ -890,6 +891,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  Jugador: {fileID: 0}
+  UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
+  Ataca: 1
+  currentTime: 0
+  Vidas: 3
 --- !u!95 &6635988247259131198
 Animator:
   serializedVersion: 7
@@ -935,6 +941,20 @@ CapsuleCollider:
   m_Height: 1.8385239
   m_Direction: 1
   m_Center: {x: 0, y: 0.8392619, z: 0}
+--- !u!114 &3528948089888917074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374314283631421470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8520ac0fc3493c14c8f3c078ad15346e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  Player: 0
 --- !u!1 &9107320214233837947
 GameObject:
   m_ObjectHideFlags: 0

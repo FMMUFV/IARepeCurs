@@ -841,6 +841,7 @@ GameObject:
   - component: {fileID: 7111433064007805160}
   - component: {fileID: 8662382841862121417}
   - component: {fileID: 5287288977421024062}
+  - component: {fileID: 6703305079060015120}
   m_Layer: 0
   m_Name: SkeletonMinion
   m_TagString: Enemy
@@ -952,6 +953,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5287288977421024062}
+    - targetCorrespondingSourceObject: {fileID: 3625503673784234523, guid: 0d328c1b83dbeec4eba9f61ad904ec2d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6703305079060015120}
   m_SourcePrefab: {fileID: 100100000, guid: 0d328c1b83dbeec4eba9f61ad904ec2d, type: 3}
 --- !u!95 &367353414903011953
 Animator:
@@ -1070,3 +1075,17 @@ MonoBehaviour:
   Ataca: 1
   currentTime: 0
   Vidas: 3
+--- !u!114 &6703305079060015120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315706842449237230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8520ac0fc3493c14c8f3c078ad15346e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  Player: 0

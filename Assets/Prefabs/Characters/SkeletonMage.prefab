@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 7458891232421095595}
   - component: {fileID: 1732383646832986546}
   - component: {fileID: 8125162648212012695}
+  - component: {fileID: 6633385028062070178}
   m_Layer: 0
   m_Name: SkeletonMage
   m_TagString: Untagged
@@ -496,6 +497,11 @@ MonoBehaviour:
   ListaWaypoints:
   - {fileID: 0}
   - {fileID: 0}
+  Jugador: {fileID: 0}
+  UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
+  Ataca: 1
+  currentTime: 0
+  Vidas: 3
 --- !u!54 &1732383646832986546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -546,6 +552,20 @@ CapsuleCollider:
   m_Height: 1.7775475
   m_Direction: 1
   m_Center: {x: 0, y: 0.78383785, z: 0}
+--- !u!114 &6633385028062070178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473877733736978305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8520ac0fc3493c14c8f3c078ad15346e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  Player: 0
 --- !u!1 &3772162810513724584
 GameObject:
   m_ObjectHideFlags: 0

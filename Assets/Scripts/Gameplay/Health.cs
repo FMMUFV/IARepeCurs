@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int MaxHealth;
+    public bool Player;
     public int CharacterHealth
     {
         get { return m_Health; }
@@ -25,7 +26,11 @@ public class Health : MonoBehaviour
         OnHealthUpdate?.Invoke(m_Health);
         if (m_Health <= 0)
         {
-            SceneManager.LoadScene(0);
+            if(Player == true)
+            {
+                SceneManager.LoadScene(0);
+            }
+            
         }
     }
 }
