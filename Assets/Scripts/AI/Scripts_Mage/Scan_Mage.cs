@@ -25,7 +25,7 @@ public class Scan_Mage : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        script = animator.gameObject.GetComponent<Agent>();
+       script = animator.gameObject.GetComponent<Agent>();
        Rayo(animator);
        raycas = script.raycas;
 
