@@ -4000,6 +4000,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 871117139}
+    - target: {fileID: 5998926256552920830, guid: 5605d021f5d576d43b90c4c5a8ad6696,
+        type: 3}
+      propertyPath: m_TagString
+      value: Arma
+      objectReference: {fileID: 0}
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4053,7 +4058,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5998926256552920830, guid: 5605d021f5d576d43b90c4c5a8ad6696,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1156298393}
   m_SourcePrefab: {fileID: 100100000, guid: 5605d021f5d576d43b90c4c5a8ad6696, type: 3}
 --- !u!1001 &130195504
 PrefabInstance:
@@ -37856,6 +37865,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1149979154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1156298389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998926256552920830, guid: 5605d021f5d576d43b90c4c5a8ad6696,
+    type: 3}
+  m_PrefabInstance: {fileID: 128859413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1156298393
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156298389}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4011559898636106432, guid: 972446be6ecc80749941e64c917adea0, type: 3}
 --- !u!1001 &1156825912
 PrefabInstance:
   m_ObjectHideFlags: 0
