@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int MaxHealth;
-    public bool Player;
+    
     public int CharacterHealth
     {
         get { return m_Health; }
@@ -29,12 +29,12 @@ public class Health : MonoBehaviour
         if (m_Health <= 0)
         {
           
-            if(Player == true)
+            if(this.gameObject.tag == "Player")
             {
                 SceneManager.LoadScene(0);
             }
             {
-                Debug.Log("Muere enemigo");
+               
                 this.gameObject.SetActive(false);
             }
         }
