@@ -119,7 +119,7 @@ public class Attack_Mage : StateMachineBehaviour
         }
         else
         {
-   
+            AtacaDeNuevo = true;
             currentTime = countdownTime;
           
         }
