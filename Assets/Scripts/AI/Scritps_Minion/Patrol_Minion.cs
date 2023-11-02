@@ -53,6 +53,14 @@ public class Patrol_Minion : StateMachineBehaviour
 
         Rayo(animator);
 
+        Health ScriptVida = animator.gameObject.GetComponent<Health>();
+
+        if (ScriptVida.PasarEstun == true)
+        {
+            ScriptVida.PasarEstun = false;
+            animator.SetBool("Patrol", true);
+        }
+
     }
 
 

@@ -33,6 +33,14 @@ public class Attack_Minion : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Contados(animator);
+
+        Health ScriptVida = animator.gameObject.GetComponent<Health>();
+
+        if (ScriptVida.PasarEstun == true)
+        {
+            ScriptVida.PasarEstun = false;
+            animator.SetBool("Stunned", true);
+        }
     }
 
     public void Rayo(Animator animator)
