@@ -13,7 +13,9 @@ public class Health : MonoBehaviour
     public delegate void OnValueUpdate(int ammount);
     public event OnValueUpdate OnHealthUpdate;
 
-    private int m_Health;
+    public int m_Health;
+
+    
 
     private void Start()
     {
@@ -32,7 +34,8 @@ public class Health : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
             {
-                Debug.Log("Enemigo");
+                Debug.Log("Muere enemigo");
+                this.gameObject.SetActive(false);
             }
         }
     }
