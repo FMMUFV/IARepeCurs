@@ -20,7 +20,7 @@ public class Patrol_Minion : StateMachineBehaviour
 
     private bool EnlaArena = false;
 
-     RaycastHit hit;//rayo
+    RaycastHit hit;//rayo
     public float raycas;
 
     public GameObject Jugador;
@@ -76,7 +76,7 @@ public class Patrol_Minion : StateMachineBehaviour
                 NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
                 aget.speed = VelocidadIni / 2;
                 EnlaArena = false;
-             
+
             }
 
 
@@ -122,9 +122,9 @@ public class Patrol_Minion : StateMachineBehaviour
     }
 
 
-  
+
     public void Rayo(Animator animator)
-        {
+    {
 
         // Obtener la dirección del rayo en función de la rotación del animator
         Vector3 rayDirection = animator.transform.forward;
@@ -135,12 +135,12 @@ public class Patrol_Minion : StateMachineBehaviour
         // Realiza un raycast y almacena la información de colisión en 'hit'
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-     
+
 
             // Comprobar si el objeto golpeado tiene una etiqueta "Player"
-             if (hit.transform.gameObject.tag == "Player")
+            if (hit.transform.gameObject.tag == "Player")
             {
-                
+
                 // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
                 Jugador = hit.transform.gameObject;
 
@@ -153,10 +153,10 @@ public class Patrol_Minion : StateMachineBehaviour
                 }
                 else if (scritc.Vidas > 1)
                 {
-                   
+
                     animator.SetBool("Patrol", false);
                     animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
-                    
+
                 }
             }
 

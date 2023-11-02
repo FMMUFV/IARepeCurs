@@ -19,6 +19,11 @@ public class Patrol_Warrior : StateMachineBehaviour
 
     private bool EnlaArena = false;
 
+
+    RaycastHit hit;//rayo
+    public float raycas;
+    public GameObject Jugador;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -33,6 +38,7 @@ public class Patrol_Warrior : StateMachineBehaviour
 
         //Asignar el primer destino
         Destino = ListaWaypoints[0];
+       
 
     }
 
@@ -42,7 +48,7 @@ public class Patrol_Warrior : StateMachineBehaviour
 
         patrulla(animator);
         EnPuente(animator);
-
+        Rayo(animator);
 
     }
 
@@ -111,5 +117,44 @@ public class Patrol_Warrior : StateMachineBehaviour
         aget.destination = Destino.position;
 
     }
+
+
+
+
+    public void Rayo(Animator animator)
+    {
+        raycas = scritc.raycas;
+        // Obtener la dirección del rayo en función de la rotación del animator
+        Vector3 rayDirection = animator.transform.forward;
+
+        // Dibuja un rayo de depuración (para visualización en el Editor de Unity)
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
+
+        // Realiza un raycast y almacena la información de colisión en 'hit'
+        if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
+        {
+
+
+            // Comprobar si el objeto golpeado tiene una etiqueta "Player"
+            if (hit.transform.gameObject.tag == "Player")
+            {
+
+                // Si el raycast golpea a un objeto con etiqueta "Player", establece el estado 'Pursue' en el animator
+                Jugador = hit.transform.gameObject;
+
+                scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
+
+              
+
+                    animator.SetBool("Patrol", false);
+                    animator.SetBool("Pursue", true); // Establece el parámetro booleano 'Pursue' en 'true' en el animator
+
+                
+            }
+
+        }
+
+    }
+
 
 }
