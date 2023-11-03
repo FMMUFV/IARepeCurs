@@ -338,6 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 4
+  PasarEstun: 0
+  m_Health: 0
 --- !u!114 &627685427525104953
 MonoBehaviour:
   m_ObjectHideFlags: 0

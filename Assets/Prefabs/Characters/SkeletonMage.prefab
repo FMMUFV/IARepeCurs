@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 6633385028062070178}
   m_Layer: 0
   m_Name: SkeletonMage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
   currentTime: 0
-  Vidas: 3
+  Vidas2: 1
 --- !u!54 &1732383646832986546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,7 +565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
-  Player: 0
+  PasarEstun: 0
+  m_Health: 0
 --- !u!1 &3772162810513724584
 GameObject:
   m_ObjectHideFlags: 0

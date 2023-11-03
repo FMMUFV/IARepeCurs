@@ -889,13 +889,11 @@ MonoBehaviour:
   ListaWaypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Jugador: {fileID: 0}
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
   currentTime: 0
-  Vidas: 3
+  Vidas2: 1
 --- !u!95 &6635988247259131198
 Animator:
   serializedVersion: 7
@@ -954,7 +952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 3
-  Player: 0
+  PasarEstun: 0
+  m_Health: 0
 --- !u!1 &9107320214233837947
 GameObject:
   m_ObjectHideFlags: 0
