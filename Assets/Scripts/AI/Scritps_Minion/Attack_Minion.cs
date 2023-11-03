@@ -87,7 +87,7 @@ public class Attack_Minion : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        
         aget.isStopped = false;
     }
 
