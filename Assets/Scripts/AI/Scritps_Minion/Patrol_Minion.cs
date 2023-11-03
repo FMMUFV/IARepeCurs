@@ -25,11 +25,13 @@ public class Patrol_Minion : StateMachineBehaviour
 
     public GameObject Jugador;
 
+    private int vidas;
 
+    Health ScriptVida;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        
         //Asignar componencte scrit para obtener sus componentes del scrtip
         scritc = animator.gameObject.GetComponent<Agent>();
         ListaWaypoints = scritc.ListaWaypoints;
@@ -43,24 +45,25 @@ public class Patrol_Minion : StateMachineBehaviour
         raycas = scritc.raycas;
 
     }
-
+   
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        
+               ScriptVida = animator.gameObject.GetComponent<Health>();
+        vidas = ScriptVida.m_Health;
         patrulla(animator);
         EnPuente(animator);
 
         Rayo(animator);
 
-        Health ScriptVida = animator.gameObject.GetComponent<Health>();
 
         if (ScriptVida.PasarEstun == true)
         {
             ScriptVida.PasarEstun = false;
             animator.SetBool("Patrol", true);
         }
-
+        
     }
 
 
@@ -133,6 +136,7 @@ public class Patrol_Minion : StateMachineBehaviour
 
     public void Rayo(Animator animator)
     {
+      
 
         // Obtener la dirección del rayo en función de la rotación del animator
         Vector3 rayDirection = animator.transform.forward;
@@ -153,13 +157,13 @@ public class Patrol_Minion : StateMachineBehaviour
                 Jugador = hit.transform.gameObject;
 
                 scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
-
-                if (scritc.Vidas <= 1)
+                Debug.Log("scritc.Vidas" + vidas);
+                if (vidas <= 1)
                 {
                     // Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
                     animator.SetBool("Flee", true);
                 }
-                else if (scritc.Vidas > 1)
+                else if (vidas > 1)
                 {
 
                     animator.SetBool("Patrol", false);

@@ -16834,7 +16834,7 @@ PrefabInstance:
     - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22789,7 +22789,7 @@ PrefabInstance:
     - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
@@ -51466,6 +51466,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287288977421024062, guid: 53e5cbf9a38e6b44394b21473f38f94c,
         type: 3}
+      propertyPath: Vidas
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287288977421024062, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
       propertyPath: 'ListaWaypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 552077623}
@@ -51484,6 +51489,11 @@ PrefabInstance:
       propertyPath: 'ListaWaypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 556719500}
+    - target: {fileID: 6703305079060015120, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8315706842449237230, guid: 53e5cbf9a38e6b44394b21473f38f94c,
         type: 3}
       propertyPath: m_Name
