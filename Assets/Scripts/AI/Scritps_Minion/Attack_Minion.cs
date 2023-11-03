@@ -106,6 +106,7 @@ public class Attack_Minion : StateMachineBehaviour
         }
         else
         {
+            currentTime = countdownTime;
             // La cuenta atrás ha llegado a cero, puedes agregar acciones aquí
             animator.SetBool("Attack", false);
 
