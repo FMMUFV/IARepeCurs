@@ -39,6 +39,15 @@ public class Pursue_Minion : StateMachineBehaviour
     }
 
 
+  /*  public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        script = animator.gameObject.GetComponent<Agent>();
+        if(script.Warrior == true)
+        {
+            animator.SetBool("Warcry", false);
+        }
+    }
+  */
 
     public void Rayo(Animator animator)
     {
@@ -98,9 +107,4 @@ public class Pursue_Minion : StateMachineBehaviour
     }
 
 
-
-  
-
-
-    
 }
