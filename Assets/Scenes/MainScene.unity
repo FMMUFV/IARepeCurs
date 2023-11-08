@@ -7613,6 +7613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMinion
       objectReference: {fileID: 0}
+    - target: {fileID: 8315706842449237230, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8926,6 +8931,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 305529802}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &306030226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306030228}
+  - component: {fileID: 306030227}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &306030227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306030226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0650a557197d9b944b7ebf1552ebec77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigos: []
+  UltimaPosicion: {x: 0, y: 0, z: 0}
+  llamada: 0
+--- !u!4 &306030228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306030226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.08901, y: -6.3741436, z: 39.49923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &309676243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22784,6 +22836,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMage_00002
       objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28565,7 +28622,6 @@ GameObject:
   - component: {fileID: 871117138}
   - component: {fileID: 871117142}
   - component: {fileID: 871117141}
-  - component: {fileID: 871117143}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28725,19 +28781,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &871117143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871117137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0650a557197d9b944b7ebf1552ebec77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemigos: []
 --- !u!1001 &872201460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69529,3 +69572,4 @@ SceneRoots:
   - {fileID: 86349053}
   - {fileID: 226232364}
   - {fileID: 1865991708}
+  - {fileID: 306030228}

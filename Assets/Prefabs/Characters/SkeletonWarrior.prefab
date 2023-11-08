@@ -894,6 +894,8 @@ MonoBehaviour:
   Ataca: 1
   currentTime: 0
   Vidas2: 1
+  GritoDeGuerra: 0
+  Warrior: 1
 --- !u!95 &6635988247259131198
 Animator:
   serializedVersion: 7

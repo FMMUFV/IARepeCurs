@@ -65,7 +65,13 @@ public class Attack_Minion : StateMachineBehaviour
                 {
                     // El jugador está a una distancia de ataque, así que ataca
                     script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
-
+                   
+                   if (script.Warrior == true )
+                    {
+                        //Aqui voy ha hacer haga el llamamineto
+                        GameManager.Instance.Grito();
+                        animator.SetBool("Warcry", false);
+                    }
 
                     // Puedes agregar lógica para ejecutar el ataque aquí
                 }
