@@ -15,12 +15,14 @@ public class GameManager : MonoBehaviour
     {
         if(Instance == null)
         {
+            //No hay un mas de un mismo gameManager y por lo tanto se le da permiso
             Instance = this;
             Debug.Log("Somos nosotros");
         }
 
         else if (Instance != this)
         {
+            //ya hay mas de un gameobject con el scritp GameManager por lo tanto destruye si Insace es diferente de this
             Destroy(gameObject);
             Debug.Log("Ya hay otra de tipo gameManager");
         }
