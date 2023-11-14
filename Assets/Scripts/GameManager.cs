@@ -26,11 +26,47 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Ya hay otra de tipo gameManager");
         }
+
+     
+
     }
 
-   
+    public void Start()
+    {
+        PasarWayponys();
+    }
+    public List<Transform> ListaWaipontsManager;
+    public void PasarWayponys()
+    {
+        //Pasar del una lista de gameobject por un bucle for para añadirlo en una lista de tipo transfor
+        
+        List<GameObject> Waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoints"));
+        for(int i = 0; i < Waypoints.Count; i++)
+        {
+            ListaWaipontsManager.Add(Waypoints[i].transform);
+        }
 
-    public void Grito()
+
+      List<GameObject> enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+      foreach(GameObject enemigo in enemigos)
+        {
+            Agent agent = enemigo.GetComponent<Agent>();
+
+            
+
+            for(int i = 0; i < 6; i++)
+            {
+                ;
+                agent.ListaWaypoints.Add(ListaWaipontsManager[Random.Range(0, ListaWaipontsManager.Count)]);
+            }
+            //Aqui se le pasa la lista creada
+            //agent.ListaWaypoints = ListaWaipontsManager;
+        }
+    }
+
+
+
+    public void Grito(Vector3 posicion)
     {
         List<GameObject>enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
@@ -46,12 +82,9 @@ public class GameManager : MonoBehaviour
                 Animator animator = enemigo.GetComponent<Animator>();
                 Agent agent = enemigo.GetComponent<Agent>();
                
-                agent.UltimaPosicion_Jugador = UltimaPosicion;
+                agent.UltimaPosicion_Jugador = posicion;
                 // if(agent.Agritado == true)
                 animator.SetBool("Warcry", true);
-
-
-
             }
         }
         else

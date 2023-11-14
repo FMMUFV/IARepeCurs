@@ -157,7 +157,7 @@ public class Patrol_Minion : StateMachineBehaviour
                 Jugador = hit.transform.gameObject;
 
                 scritc.Jugador = hit.transform.gameObject; // Asigna el objeto golpeado al atributo 'Jugador' en 'scritc'
-                Debug.Log("scritc.Vidas" + vidas);
+                
                 if (vidas <= 1)
                 {
                     // Debug.Log("una o menos" + scritc.Vidas + "Pasa a Flee" );
