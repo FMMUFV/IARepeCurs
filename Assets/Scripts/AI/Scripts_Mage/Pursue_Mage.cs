@@ -11,7 +11,7 @@ public class Pursue_Mage : StateMachineBehaviour
     // OnStateEnter se llama cuando se inicia una transici�n y se eval�a este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       // animator.SetBool("Pursue", false); 
+        animator.SetBool("Pursue", false); 
       
 
        

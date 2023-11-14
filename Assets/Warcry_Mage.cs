@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Warcry_Minion_Warrior : StateMachineBehaviour
+public class Warcry_Mage : StateMachineBehaviour
 {
     Agent ScritpAgent;
     int DistanUltimaPosJugador = 1;
@@ -31,9 +31,9 @@ public class Warcry_Minion_Warrior : StateMachineBehaviour
 
         if (distanciaAlJugador < DistanUltimaPosJugador)
         {
-           
             animator.SetBool("Warcry", false);
-         
+            animator.SetBool("Scan", true);
+
         }
 
     }
@@ -57,15 +57,29 @@ public class Warcry_Minion_Warrior : StateMachineBehaviour
 
             if (hit.transform.gameObject.tag == "Player")
             {
-                animator.SetBool("Pursue", true);  
-             
+                animator.SetBool("Pursue", true);
+
             }
-       
+
         }
-    
+
     }
 
 
+
+
+
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
+
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

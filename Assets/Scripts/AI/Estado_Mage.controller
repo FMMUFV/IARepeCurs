@@ -487,6 +487,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &1600324772142013040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f413b0a1bd0791744940fd40219b3f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycas: 0
 --- !u!1101 &2138025322752839600
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -686,7 +699,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3116282955611493310}
   - {fileID: 7598984256612845690}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 1600324772142013040}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
