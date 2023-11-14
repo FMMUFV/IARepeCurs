@@ -8172,7 +8172,7 @@ GameObject:
   - component: {fileID: 274564166}
   m_Layer: 0
   m_Name: Waypoints_Mage_3
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8962,6 +8962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UltimaPosicion: {x: 0, y: 0, z: 0}
   llamada: 0
+  ListaWaipontsManager: []
 --- !u!4 &306030228
 Transform:
   m_ObjectHideFlags: 0
@@ -9062,7 +9063,7 @@ GameObject:
   - component: {fileID: 310858099}
   m_Layer: 0
   m_Name: Waypoints_Mage_2
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12678,7 +12679,7 @@ GameObject:
   - component: {fileID: 425660945}
   m_Layer: 0
   m_Name: Waypoints_Mage_3
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12789,7 +12790,7 @@ GameObject:
   - component: {fileID: 429492026}
   m_Layer: 0
   m_Name: Waypoints_Minion_3
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15259,7 +15260,7 @@ GameObject:
   - component: {fileID: 491930331}
   m_Layer: 0
   m_Name: Waypoints_Warrior_3
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18111,7 +18112,7 @@ GameObject:
   - component: {fileID: 552077623}
   m_Layer: 0
   m_Name: Waypoints_Warrior_1
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18148,7 +18149,7 @@ GameObject:
   - component: {fileID: 556719500}
   m_Layer: 0
   m_Name: Waypoints_Warrior_4
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18643,7 +18644,7 @@ GameObject:
   - component: {fileID: 568505749}
   m_Layer: 0
   m_Name: Waypoints_Warrior_2
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25457,7 +25458,7 @@ GameObject:
   - component: {fileID: 777822527}
   m_Layer: 0
   m_Name: Waypoints_Mage_4
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31012,7 +31013,7 @@ GameObject:
   - component: {fileID: 931288029}
   m_Layer: 0
   m_Name: Waypoints_Minion_2
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34630,7 +34631,7 @@ GameObject:
   - component: {fileID: 1042244062}
   m_Layer: 0
   m_Name: Waypoints_Minion_4
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36448,7 +36449,7 @@ GameObject:
   - component: {fileID: 1111262797}
   m_Layer: 0
   m_Name: Waypoints_Mage_1
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38181,7 +38182,7 @@ GameObject:
   - component: {fileID: 1157628996}
   m_Layer: 0
   m_Name: Waypoints_Mage_1
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51254,7 +51255,7 @@ GameObject:
   - component: {fileID: 1571465129}
   m_Layer: 0
   m_Name: Waypoints_Mage_3
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53436,7 +53437,7 @@ GameObject:
   - component: {fileID: 1640894896}
   m_Layer: 0
   m_Name: Waypoints_Mage_1
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64106,7 +64107,7 @@ GameObject:
   - component: {fileID: 1989478209}
   m_Layer: 0
   m_Name: Waypoints_Mage_2
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67108,7 +67109,7 @@ GameObject:
   - component: {fileID: 2060900510}
   m_Layer: 0
   m_Name: Waypoints_Minion_1
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67139,7 +67140,7 @@ GameObject:
   - component: {fileID: 2062166814}
   m_Layer: 0
   m_Name: Waypoints_Mage_2
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
