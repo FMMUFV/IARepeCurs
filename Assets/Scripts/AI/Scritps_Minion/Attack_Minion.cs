@@ -69,7 +69,9 @@ public class Attack_Minion : StateMachineBehaviour
                    if (script.Warrior == true )
                     {
                         //Aqui voy ha hacer haga el llamamineto
+                        GameManager.Instance.UltimaPosicion = hit.transform.position;
                         GameManager.Instance.Grito();
+                        
                         animator.SetBool("Warcry", false);
                     }
 

@@ -45,7 +45,9 @@ public class GameManager : MonoBehaviour
                 //Sirve para entrar es su en su componete animator y pasarlo al estado Warcry
                 Animator animator = enemigo.GetComponent<Animator>();
                 Agent agent = enemigo.GetComponent<Agent>();
-               // if(agent.Agritado == true)
+               
+                agent.UltimaPosicion_Jugador = UltimaPosicion;
+                // if(agent.Agritado == true)
                 animator.SetBool("Warcry", true);
 
 
