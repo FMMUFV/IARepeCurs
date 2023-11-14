@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; } 
 
     // Start is called before the first frame update
-    public List<GameObject> enemigos;
+    
     public Vector3 UltimaPosicion;
     public int llamada = 0;
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void Grito()
     {
-        enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+        List<GameObject>enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
         if (enemigos.Count > 0)
         {

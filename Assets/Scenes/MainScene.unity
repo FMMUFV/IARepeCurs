@@ -8942,7 +8942,7 @@ GameObject:
   - component: {fileID: 306030228}
   - component: {fileID: 306030227}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Director_IA_GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8960,7 +8960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0650a557197d9b944b7ebf1552ebec77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigos: []
   UltimaPosicion: {x: 0, y: 0, z: 0}
   llamada: 0
 --- !u!4 &306030228
