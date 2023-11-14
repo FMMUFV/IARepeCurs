@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeea25e70cb993c438f9b5100bb69aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycas: 0
 --- !u!1102 &-1612409085784887160
 AnimatorState:
   serializedVersion: 6
@@ -526,8 +527,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Patrol
+  - m_ConditionMode: 2
+    m_ConditionEvent: Warcry
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1612409085784887160}
