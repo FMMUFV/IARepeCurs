@@ -117,7 +117,8 @@ public class Patrol_Minion : StateMachineBehaviour
 
 
 
-        //if (dist < 1 && siguientePos < NumeDelaLista)
+        //!aget.hasPath --> si no tiene ruta
+        //aget.remainingDistance < 1 --> si su distancia es menor que 1 teniendo encuenta el navMeshAgent
         if (!aget.hasPath || (aget.remainingDistance < 1))
         {
             //--------------------------------------------------
