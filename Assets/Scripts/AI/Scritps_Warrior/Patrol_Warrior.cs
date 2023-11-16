@@ -26,6 +26,7 @@ public class Patrol_Warrior : StateMachineBehaviour
 
 
 
+    /// Es para saber si puede llegar a ese destino
 
    /// https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.CalculatePath.html
 
@@ -100,20 +101,25 @@ public class Patrol_Warrior : StateMachineBehaviour
         }
     }
 
-
     public void patrulla(Animator animator)
     {
+
+
+
         //Inicializar y crear variable aget
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         //Variable Dist para ver la distancia que hay de su destino
-        float dist = Vector3.Distance(Destino.position, aget.transform.position);
         //La dimension que tiene la lista de Waypoints
         NumeDelaLista = ListaWaypoints.Count;
 
-        //if (dist < 1 && siguientePos < NumeDelaLista)
-        if (dist < 1)
-        {
 
+
+
+
+        //if (dist < 1 && siguientePos < NumeDelaLista)
+        if (!aget.hasPath || (aget.remainingDistance < 1))
+        {
+            //--------------------------------------------------
 
             if (siguientePos >= (NumeDelaLista - 1))
             {
@@ -126,8 +132,20 @@ public class Patrol_Warrior : StateMachineBehaviour
             Destino = ListaWaypoints[siguientePos];
             // aget.destination = Destino.position; 
 
+            ///----------------Parte nueva comprovar a mas detalle------------------------------
+            var path = new NavMeshPath();
+
+            aget.CalculatePath(Destino.position, path);
+
+
+            if (path.status == NavMeshPathStatus.PathComplete)
+            {
+                //Cuando esto suceda es que puede llegar a la posicion
+                aget.destination = Destino.position;
+            }
+
         }
-        aget.destination = Destino.position;
+
 
     }
 

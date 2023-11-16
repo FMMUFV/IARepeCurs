@@ -14,7 +14,7 @@ public class Patrol_Mage : StateMachineBehaviour
     public float VelocidadIni;
     private bool EnlaArena = false;
 
-    
+
     //Datos del scritp agent
     private Agent script;
     public float raycas;
@@ -31,7 +31,7 @@ public class Patrol_Mage : StateMachineBehaviour
         ListaWaypoints = script.ListaWaypoints;
         raycas = script.raycas;
 
-    //-----Puente recojer velocidad inicial------
+        //-----Puente recojer velocidad inicial------
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;
         aget.isStopped = false;
@@ -52,7 +52,7 @@ public class Patrol_Mage : StateMachineBehaviour
 
 
 
-    
+
 
     //Puente O pasarela
     public void EnPuente(Animator animator)
@@ -88,17 +88,23 @@ public class Patrol_Mage : StateMachineBehaviour
 
     public void patrulla(Animator animator)
     {
+
+
+
         //Inicializar y crear variable aget
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         //Variable Dist para ver la distancia que hay de su destino
-        float dist = Vector3.Distance(Destino.position, aget.transform.position);
         //La dimension que tiene la lista de Waypoints
         NumeDelaLista = ListaWaypoints.Count;
 
-        //if (dist < 1 && siguientePos < NumeDelaLista)
-        if (dist < 1)
-        {
 
+
+
+
+        //if (dist < 1 && siguientePos < NumeDelaLista)
+        if (!aget.hasPath || (aget.remainingDistance < 1))
+        {
+            //--------------------------------------------------
 
             if (siguientePos >= (NumeDelaLista - 1))
             {
@@ -111,35 +117,50 @@ public class Patrol_Mage : StateMachineBehaviour
             Destino = ListaWaypoints[siguientePos];
             // aget.destination = Destino.position; 
 
+            ///----------------Parte nueva comprovar a mas detalle------------------------------
+            var path = new NavMeshPath();
+
+            aget.CalculatePath(Destino.position, path);
+
+
+            if (path.status == NavMeshPathStatus.PathComplete)
+            {
+                //Cuando esto suceda es que puede llegar a la posicion
+                aget.destination = Destino.position;
+            }
+
         }
-        aget.destination = Destino.position;
+
 
     }
+
+
+
 
     public void Rayo(Animator animator)
     {
 
-        Vector3 rayDirection =  animator.transform.forward;
+        Vector3 rayDirection = animator.transform.forward;
 
         Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
 
-        if(Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
+        if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
-   
-        // Detectar al jugador
+
+            // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
                 animator.SetBool("Patrol", false);
                 animator.SetBool("Pursue", true);
-                
+
                 script.Jugador = hit.transform.gameObject;
-                
+
             }
 
         }
     }
 
-    
+
 
 
 }
