@@ -24,6 +24,11 @@ public class Patrol_Warrior : StateMachineBehaviour
     public float raycas;
     public GameObject Jugador;
 
+
+
+
+   /// https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.CalculatePath.html
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -31,7 +36,7 @@ public class Patrol_Warrior : StateMachineBehaviour
         //Asignar componencte scrit para obtener sus componentes del scrtip
         scritc = animator.gameObject.GetComponent<Agent>();
         ListaWaypoints = scritc.ListaWaypoints;
-
+        scritc.PuedeGritar = true;
         //-----Puente recojer velocidad inicial------
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         VelocidadIni = aget.speed;

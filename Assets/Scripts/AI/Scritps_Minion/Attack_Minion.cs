@@ -69,10 +69,16 @@ public class Attack_Minion : StateMachineBehaviour
                    if (script.Warrior == true )
                     {
                         //Aqui voy ha hacer haga el llamamineto
-                        
-                        GameManager.Instance.Grito(hit.transform.position);
-                        Debug.Log("gritando");
-                        animator.SetBool("Warcry", false);
+                        if(script.PuedeGritar == true)
+                        {
+                            script.PuedeGritar = false;
+                            GameManager.Instance.Grito(hit.transform.position);
+                            Debug.Log("gritando");
+                            
+                            animator.SetBool("Warcry", false);
+                        }
+
+
                     }
 
                     // Puedes agregar lógica para ejecutar el ataque aquí
