@@ -25,11 +25,9 @@ public class Warcry_Minion_Warrior : StateMachineBehaviour
 
         Rayo(animator);
 
-        //Calcular Distanicia de posicion
-        //Si a llegado a su destino cambia a Warcry
-        float distanciaAlJugador = Vector3.Distance(animator.transform.position, ScritpAgent.UltimaPosicion_Jugador);
+        //aget.remainingDistance= La distancia entre la posición del agente y el destino en la ruta actual. 
 
-        if (distanciaAlJugador < DistanUltimaPosJugador)
+        if (aget.remainingDistance < 1)
         {
            
             animator.SetBool("Warcry", false);

@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
                
                 agent.UltimaPosicion_Jugador = posicion;
                 // if(agent.Agritado == true)
+               
                 animator.SetBool("Warcry", true);
             }
         }

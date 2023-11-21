@@ -101,7 +101,8 @@ public class Patrol_Mage : StateMachineBehaviour
 
 
 
-        //if (dist < 1 && siguientePos < NumeDelaLista)
+        //Sirve !aget.hasPash  --> Si tiene asignado un destino al que ir 
+        // Y aget.remainingDistance < 1 = sirve para comprobar que su distancia desde la maya de navegacion si es menor que 1.
         if (!aget.hasPath || (aget.remainingDistance < 1))
         {
             //--------------------------------------------------

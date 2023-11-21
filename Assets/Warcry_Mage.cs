@@ -13,7 +13,7 @@ public class Warcry_Mage : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-
+        animator.SetBool("Scan", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,11 +25,10 @@ public class Warcry_Mage : StateMachineBehaviour
 
         Rayo(animator);
 
-        //Calcular Distanicia de posicion
-        //Si a llegado a su destino cambia a Warcry
-        float distanciaAlJugador = Vector3.Distance(animator.transform.position, ScritpAgent.UltimaPosicion_Jugador);
+        //aget.remainingDistance= La distancia entre la posición del agente y el destino en la ruta actual. 
 
-        if (distanciaAlJugador < DistanUltimaPosJugador)
+
+        if (aget.remainingDistance < 1)
         {
             animator.SetBool("Warcry", false);
             animator.SetBool("Scan", true);
