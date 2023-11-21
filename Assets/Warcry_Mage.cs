@@ -21,13 +21,15 @@ public class Warcry_Mage : StateMachineBehaviour
     {
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
         ScritpAgent = animator.GetComponent<Agent>();
-        aget.destination = ScritpAgent.UltimaPosicion_Jugador;
+    
 
         Rayo(animator);
 
         //aget.remainingDistance= La distancia entre la posición del agente y el destino en la ruta actual. 
 
+        //Mirar esta parte parece que no coje la posicion
 
+        aget.destination = ScritpAgent.UltimaPosicion_Jugador;
         if (aget.remainingDistance < 1)
         {
             animator.SetBool("Warcry", false);
