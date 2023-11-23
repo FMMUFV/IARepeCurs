@@ -29,14 +29,27 @@ public class Warcry_Mage : StateMachineBehaviour
 
         //Mirar esta parte parece que no coje la posicion
 
+        PasarScan(animator);
+
+    }
+
+    public void PasarScan(Animator animator)
+    {
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+        ScritpAgent = animator.GetComponent<Agent>();
+
         aget.destination = ScritpAgent.UltimaPosicion_Jugador;
-        if (aget.remainingDistance < 1)
+        float dist = Vector3.Distance(aget.transform.position, ScritpAgent.UltimaPosicion_Jugador);
+        if (dist < 1)
         {
-            animator.SetBool("Warcry", false);
-            animator.SetBool("Scan", true);
-
+            //Este if pasa toalment de el //Preguntar pro que lo tengo que hacer con el de arriva
+            if (!aget.hasPath || aget.remainingDistance < 1)
+            {
+                animator.SetBool("Warcry", false);
+                animator.SetBool("Scan", true);
+                Debug.Log("Esta en la posicion");
+            }
         }
-
     }
 
 
