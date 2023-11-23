@@ -71,7 +71,7 @@ public class Patrol_Mage : StateMachineBehaviour
                 NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
                 aget.speed = VelocidadIni / 2;
                 EnlaArena = false;
-                Debug.Log("pisando");
+                
             }
 
 

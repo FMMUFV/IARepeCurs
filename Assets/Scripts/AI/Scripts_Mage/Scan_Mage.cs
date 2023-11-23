@@ -71,7 +71,7 @@ public class Scan_Mage : StateMachineBehaviour
             //La rotacion esta completa por lo tanto tiene que ir a patrol
 
             //Y cortar los otros caminos activados
-            Debug.Log("Ya a rotado");
+           
             rotacion = 0f;
             animator.SetBool("Pursue", false);
             animator.SetBool("Scan", false);

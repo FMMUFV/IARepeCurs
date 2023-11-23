@@ -500,6 +500,8 @@ MonoBehaviour:
   Jugador: {fileID: 0}
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
+  Warrior: 0
+  PuedeGritar: 0
   currentTime: 0
   Vidas2: 1
 --- !u!54 &1732383646832986546

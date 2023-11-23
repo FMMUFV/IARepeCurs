@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         {
             //No hay un mas de un mismo gameManager y por lo tanto se le da permiso
             Instance = this;
-            Debug.Log("Somos nosotros");
+          
         }
 
         else if (Instance != this)
