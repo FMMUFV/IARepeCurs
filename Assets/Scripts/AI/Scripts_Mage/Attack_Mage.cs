@@ -68,7 +68,7 @@ public class Attack_Mage : StateMachineBehaviour
 
             if (hit.transform.gameObject.tag == "Player")
             {
-
+                script.Jugador = hit.transform.gameObject;
               
 
                 if (hit.distance < distanciaDeAtaque)

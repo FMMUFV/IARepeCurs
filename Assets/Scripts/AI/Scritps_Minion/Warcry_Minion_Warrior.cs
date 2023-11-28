@@ -27,11 +27,12 @@ public class Warcry_Minion_Warrior : StateMachineBehaviour
 
         //aget.remainingDistance= La distancia entre la posición del agente y el destino en la ruta actual. 
 
-        if (aget.remainingDistance < 1)
+        if (aget.hasPath && aget.remainingDistance < 1)
         {
            
             animator.SetBool("Warcry", false);
-         
+            animator.SetBool("Patrol", true);
+
         }
 
     }
@@ -65,21 +66,47 @@ public class Warcry_Minion_Warrior : StateMachineBehaviour
 
 
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
+    int PuenteMask;
+    private bool EnlaArena = false;
+    //Puente O pasarela
+    public void EnPuente(Animator animator)
+    {
+        Agent scriptAgent = animator.gameObject.GetComponent<Agent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+
+
+
+
+        PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(animator.transform.position, out hit, 2.0f, PuenteMask))
+        {
+
+
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+
+                aget.speed = scriptAgent.velocidadSueloPuente;
+                EnlaArena = false;
+
+            }
+
+
+
+        }
+        else
+        {
+
+            aget.speed = scriptAgent.velocidadSueloNormal;
+
+            EnlaArena = true;
+        }
+    }
+
+
+
+
 }

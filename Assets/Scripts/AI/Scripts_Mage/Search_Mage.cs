@@ -34,21 +34,7 @@ public class Search_Mage : StateMachineBehaviour
     {
         Rayo(animator);
 
-    /*
-        //Si a llegado a scan
-             NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-                    //Variable Dist para ver la distancia que hay de su destino
-                    float dist = Vector3.Distance(Destino, aget.transform.position);
-
-                    //Si a llegado o esta posicion pasa a scad
-                    if(dist < 1)
-                    {
-
-                // animator.SetBool("Scan", true);
-                       Scan = true;
-
-                    }
-           */         
+        EnPuente(animator);
     }
 
     public void Rayo(Animator animator)
@@ -101,4 +87,45 @@ public class Search_Mage : StateMachineBehaviour
         }
 
     }
+
+
+    int PuenteMask;
+    private bool EnlaArena = false;
+    //Puente O pasarela
+    public void EnPuente(Animator animator)
+    {
+        Agent scriptAgent = animator.gameObject.GetComponent<Agent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+
+
+
+
+
+        PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(animator.transform.position, out hit, 2.0f, PuenteMask))
+        {
+
+
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+
+                aget.speed = scriptAgent.velocidadSueloPuente;
+                EnlaArena = false;
+
+            }
+
+
+
+        }
+        else
+        {
+
+            aget.speed = scriptAgent.velocidadSueloNormal;
+
+            EnlaArena = true;
+        }
+    }
+
 }

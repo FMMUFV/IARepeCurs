@@ -501,9 +501,10 @@ MonoBehaviour:
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
   Warrior: 0
-  PuedeGritar: 0
+  PuedeGritar: 1
   currentTime: 0
-  Vidas2: 1
+  velocidadSueloNormal: 3.5
+  velocidadSueloPuente: 1.75
 --- !u!54 &1732383646832986546
 Rigidbody:
   m_ObjectHideFlags: 0

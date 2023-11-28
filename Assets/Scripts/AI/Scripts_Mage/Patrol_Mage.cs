@@ -54,9 +54,15 @@ public class Patrol_Mage : StateMachineBehaviour
 
 
 
+ 
     //Puente O pasarela
     public void EnPuente(Animator animator)
     {
+        Agent scriptAgent = animator.gameObject.GetComponent<Agent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+
+
+
 
 
         PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
@@ -68,10 +74,10 @@ public class Patrol_Mage : StateMachineBehaviour
             if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
             {
                 //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
-                NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-                aget.speed = VelocidadIni / 2;
+
+                aget.speed = scriptAgent.velocidadSueloPuente;
                 EnlaArena = false;
-                
+
             }
 
 
@@ -79,12 +85,12 @@ public class Patrol_Mage : StateMachineBehaviour
         }
         else
         {
-            NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-            aget.speed = VelocidadIni;
+
+            aget.speed = scriptAgent.velocidadSueloNormal;
+
             EnlaArena = true;
         }
     }
-
 
     public void patrulla(Animator animator)
     {

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         {
             //No hay un mas de un mismo gameManager y por lo tanto se le da permiso
             Instance = this;
-          
+            Debug.Log("Somos nosotros");
         }
 
         else if (Instance != this)
@@ -84,15 +84,11 @@ public class GameManager : MonoBehaviour
                
                 agent.UltimaPosicion_Jugador = posicion;
                 // if(agent.Agritado == true)
-               
+
                 animator.SetBool("Warcry", true);
+                //animator.SetTrigger("Warcry_2");
             }
         }
-        else
-        {
-            // No se encontraron GameObjects con el tag "Enemigo"
-            // Realiza alguna acción alternativa o muestra un mensaje de error
-
-        }
+       
     }
 }

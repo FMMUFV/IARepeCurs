@@ -892,10 +892,11 @@ MonoBehaviour:
   Jugador: {fileID: 0}
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
-  currentTime: 0
-  Vidas2: 1
-  GritoDeGuerra: 0
   Warrior: 1
+  PuedeGritar: 1
+  currentTime: 0
+  velocidadSueloNormal: 3.5
+  velocidadSueloPuente: 1.75
 --- !u!95 &6635988247259131198
 Animator:
   serializedVersion: 7

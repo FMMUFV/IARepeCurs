@@ -2650,11 +2650,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonWarrior_00002
       objectReference: {fileID: 0}
-    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2843,8 +2838,10 @@ Transform:
   - {fileID: 1959267122}
   - {fileID: 428616792}
   - {fileID: 1872166942}
+  - {fileID: 1950981584}
   - {fileID: 2122411799}
   - {fileID: 1017150188}
+  - {fileID: 1680275768}
   - {fileID: 264435368}
   - {fileID: 646419783}
   m_Father: {fileID: 0}
@@ -4088,7 +4085,7 @@ PrefabInstance:
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.08
+      value: 69.05
       objectReference: {fileID: 0}
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
@@ -4098,7 +4095,7 @@ PrefabInstance:
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 67.34
+      value: 63.53
       objectReference: {fileID: 0}
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
@@ -7700,7 +7697,7 @@ PrefabInstance:
     - target: {fileID: 8315706842449237230, guid: 53e5cbf9a38e6b44394b21473f38f94c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16971,11 +16968,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonWarrior_00001
       objectReference: {fileID: 0}
-    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19135,6 +19127,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 576597518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &580614864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 86349053}
+    m_Modifications:
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.049999714
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287288977421024062, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 552077623}
+    - target: {fileID: 5287288977421024062, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 568505749}
+    - target: {fileID: 5287288977421024062, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 491930331}
+    - target: {fileID: 8315706842449237230, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonMinion_00002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53e5cbf9a38e6b44394b21473f38f94c, type: 3}
 --- !u!1001 &584115195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19978,16 +20053,6 @@ PrefabInstance:
       propertyPath: 'ListaWaypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 568505749}
-    - target: {fileID: 1765151928039986248, guid: 59873dc5639edab47aa0a658787af525,
-        type: 3}
-      propertyPath: 'ListaWaypoints.Array.data[2]'
-      value: 
-      objectReference: {fileID: 491930331}
-    - target: {fileID: 1765151928039986248, guid: 59873dc5639edab47aa0a658787af525,
-        type: 3}
-      propertyPath: 'ListaWaypoints.Array.data[3]'
-      value: 
-      objectReference: {fileID: 556719500}
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20042,11 +20107,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonWarrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20266,7 +20326,7 @@ Transform:
   m_GameObject: {fileID: 626214706}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4618496, y: 0, z: 0, w: 0.88695824}
-  m_LocalPosition: {x: 66.08, y: 15, z: 57.339996}
+  m_LocalPosition: {x: 69.05, y: 15, z: 53.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22934,7 +22994,7 @@ PrefabInstance:
     - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
@@ -28792,7 +28852,7 @@ Transform:
   m_GameObject: {fileID: 871117137}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4618496, y: 0, z: 0, w: 0.88695824}
-  m_LocalPosition: {x: 66.08, y: 15, z: 57.339996}
+  m_LocalPosition: {x: 69.05, y: 15, z: 53.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30787,6 +30847,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 923234315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &924357344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 86349053}
+    m_Modifications:
+    - target: {fileID: 1765151928039986248, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1157628996}
+    - target: {fileID: 1765151928039986248, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1989478209}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 75.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.049999714
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 63.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonWarrior_00003
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59873dc5639edab47aa0a658787af525, type: 3}
 --- !u!1001 &926404894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38110,7 +38248,7 @@ PrefabInstance:
     - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
@@ -45237,6 +45375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMage_00003
       objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45297,6 +45440,11 @@ PrefabInstance:
       propertyPath: 'ListaWaypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 310858099}
+    - target: {fileID: 7458891232421095595, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: 'ListaWaypoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 274564166}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51604,7 +51752,7 @@ PrefabInstance:
     - target: {fileID: 8315706842449237230, guid: 53e5cbf9a38e6b44394b21473f38f94c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55198,6 +55346,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3784347053423414816, guid: f6bef7aaddbc5bc4db5d21195c43d61a,
     type: 3}
   m_PrefabInstance: {fileID: 1680002587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1680275768 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
+    type: 3}
+  m_PrefabInstance: {fileID: 924357344}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682037926
 PrefabInstance:
@@ -63063,6 +63217,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1950126073}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1950981584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1752082578601051737, guid: 53e5cbf9a38e6b44394b21473f38f94c,
+    type: 3}
+  m_PrefabInstance: {fileID: 580614864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952047713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69564,11 +69724,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonMage
       objectReference: {fileID: 0}
-    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69629,16 +69784,6 @@ PrefabInstance:
       propertyPath: 'ListaWaypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 2062166814}
-    - target: {fileID: 7458891232421095595, guid: 21f2f68be12333b4a883776eede7afbc,
-        type: 3}
-      propertyPath: 'ListaWaypoints.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1571465129}
-    - target: {fileID: 7458891232421095595, guid: 21f2f68be12333b4a883776eede7afbc,
-        type: 3}
-      propertyPath: 'ListaWaypoints.Array.data[3]'
-      value: 
-      objectReference: {fileID: 777822527}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

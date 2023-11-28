@@ -25,10 +25,6 @@ public class Warcry_Mage : StateMachineBehaviour
 
         Rayo(animator);
 
-        //aget.remainingDistance= La distancia entre la posición del agente y el destino en la ruta actual. 
-
-        //Mirar esta parte parece que no coje la posicion
-
         PasarScan(animator);
 
     }
@@ -36,21 +32,20 @@ public class Warcry_Mage : StateMachineBehaviour
     public void PasarScan(Animator animator)
     {
         NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
-        aget.destination = ScritpAgent.UltimaPosicion_Jugador;
         ScritpAgent = animator.GetComponent<Agent>();
 
+        aget.destination = ScritpAgent.UltimaPosicion_Jugador;
+
+        //Este if es valido cuando tiene:
+             //ruta(aget.haspath)
+             //y si tambien se cumple que su distancia es menor que 1(aget.remainingDistance < 1)
+        if (aget.hasPath && aget.remainingDistance < 1)
+            {
+                animator.SetBool("Warcry", false);
+                animator.SetBool("Scan", true);
+               
+            }
         
-        float dist = Vector3.Distance(aget.transform.position, ScritpAgent.UltimaPosicion_Jugador);
-        //if (dist < 1)
-        //{
-        //    //Este if pasa toalment de el //Preguntar pro que lo tengo que hacer con el de arriva
-        if (!aget.hasPath || aget.remainingDistance < 1)
-        {
-            animator.SetBool("Warcry", false);
-            animator.SetBool("Scan", true);
-            Debug.Log("Esta en la posicion");
-        }
-        //}
     }
 
 
@@ -72,6 +67,7 @@ public class Warcry_Mage : StateMachineBehaviour
 
             if (hit.transform.gameObject.tag == "Player")
             {
+                animator.SetBool("Warcry", false);
                 animator.SetBool("Pursue", true);
 
             }

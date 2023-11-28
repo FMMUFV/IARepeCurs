@@ -41,6 +41,7 @@ public class Attack_Minion : StateMachineBehaviour
             ScriptVida.PasarEstun = false;
             animator.SetBool("Stunned", true);
         }
+        EnPuente(animator);
     }
 
     public void Rayo(Animator animator)
@@ -61,6 +62,7 @@ public class Attack_Minion : StateMachineBehaviour
 
             if (hit.transform.gameObject.tag == "Player")
             {
+                script.Jugador = hit.transform.gameObject;
                 if (hit.distance < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
@@ -75,7 +77,7 @@ public class Attack_Minion : StateMachineBehaviour
                             GameManager.Instance.Grito(hit.transform.position);
                             Debug.Log("gritando");
                             
-                            animator.SetBool("Warcry", false);
+                           
                         }
 
 
@@ -103,6 +105,7 @@ public class Attack_Minion : StateMachineBehaviour
     {
         
         aget.isStopped = false;
+        animator.SetBool("Warcry", false);
     }
 
 
@@ -124,6 +127,48 @@ public class Attack_Minion : StateMachineBehaviour
             // La cuenta atrás ha llegado a cero, puedes agregar acciones aquí
             animator.SetBool("Attack", false);
 
+        }
+    }
+
+
+
+
+    int PuenteMask;
+    private bool EnlaArena = false;
+    //Puente O pasarela
+    public void EnPuente(Animator animator)
+    {
+        Agent scriptAgent = animator.gameObject.GetComponent<Agent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+
+
+
+
+
+        PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(animator.transform.position, out hit, 2.0f, PuenteMask))
+        {
+
+
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+
+                aget.speed = scriptAgent.velocidadSueloPuente;
+                EnlaArena = false;
+
+            }
+
+
+
+        }
+        else
+        {
+
+            aget.speed = scriptAgent.velocidadSueloNormal;
+
+            EnlaArena = true;
         }
     }
 
