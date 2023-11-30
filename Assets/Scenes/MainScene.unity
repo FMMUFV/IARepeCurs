@@ -61696,6 +61696,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_walled
       objectReference: {fileID: 0}
+    - target: {fileID: 7403106475635801072, guid: 4d6f77e1d3c487e40a641cb4cf9886e1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
