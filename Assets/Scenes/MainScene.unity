@@ -6978,6 +6978,8 @@ Transform:
   - {fileID: 43960115}
   - {fileID: 1057120148}
   - {fileID: 2004703782}
+  - {fileID: 1801654604}
+  - {fileID: 1458443108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226342538
@@ -16969,6 +16971,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonWarrior_00001
       objectReference: {fileID: 0}
+    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20135,7 +20142,7 @@ PrefabInstance:
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.539223
+      value: 29.08
       objectReference: {fileID: 0}
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
@@ -20145,7 +20152,7 @@ PrefabInstance:
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.991142
+      value: 41.77
       objectReference: {fileID: 0}
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
@@ -20956,6 +20963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_tile_large_00010
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848347465449028118, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6263675313572548189, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
         type: 3}
@@ -25081,6 +25093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_tile_large_00008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848347465449028118, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6263675313572548189, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
         type: 3}
@@ -30400,6 +30417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_tile_small_00003
       objectReference: {fileID: 0}
+    - target: {fileID: 2458325089835389305, guid: edea11598f9877040b38b4e71a6eb416,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4096303662222402312, guid: edea11598f9877040b38b4e71a6eb416,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30998,6 +31020,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonWarrior_00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40019,6 +40046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_tile_large_00009
       objectReference: {fileID: 0}
+    - target: {fileID: 4848347465449028118, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6263675313572548189, guid: 45b9ed9817ddf264ab7915e3d448ff1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48022,6 +48054,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1454234918}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1458443107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458443108}
+  m_Layer: 0
+  m_Name: Waypoints_Archer_00001
+  m_TagString: Waypoints
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458443108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458443107}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 68.04, y: 4.41, z: 76.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1462603414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59050,6 +59113,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1800772610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1801654603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801654604}
+  m_Layer: 0
+  m_Name: Waypoints_Archer
+  m_TagString: Waypoints
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801654604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801654603}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.02, y: 4.41, z: 76.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1803701652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67650,6 +67744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor_tile_small_00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458325089835389305, guid: edea11598f9877040b38b4e71a6eb416,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4096303662222402312, guid: edea11598f9877040b38b4e71a6eb416,
         type: 3}
