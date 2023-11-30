@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 365599598184040877}
   - component: {fileID: 6788486839447063772}
   - component: {fileID: 5791092262155974781}
+  - component: {fileID: 1578945146767337168}
   m_Layer: 0
   m_Name: SkeletonArcher
   m_TagString: Enemy
@@ -744,7 +745,7 @@ Animator:
   m_GameObject: {fileID: 6267799194544550459}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 769428a2e4c5e36418ace050282542f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -802,6 +803,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1578945146767337168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267799194544550459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8520ac0fc3493c14c8f3c078ad15346e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  PasarEstun: 0
+  m_Health: 0
 --- !u!1 &6891593085882511320
 GameObject:
   m_ObjectHideFlags: 0
