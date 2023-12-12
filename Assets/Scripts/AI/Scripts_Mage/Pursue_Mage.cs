@@ -11,9 +11,9 @@ public class Pursue_Mage : StateMachineBehaviour
     // OnStateEnter se llama cuando se inicia una transici�n y se eval�a este estado
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("Pursue", false); 
-      
+        animator.SetBool("Pursue", false);
 
+        Debug.Log("Pasa por pursue");
        
     }
 
@@ -46,9 +46,9 @@ public class Pursue_Mage : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 script.UltimaPosicion_Jugador = hit.transform.gameObject.transform.position;
-                float distanciaAlJugador = Vector3.Distance(animator.transform.position, hit.transform.position);
+              
 
-                if (distanciaAlJugador < distanciaDeAtaque)
+                if (hit.distance < distanciaDeAtaque)
                 {
                     // El jugador está a una distancia de ataque, así que ataca
 

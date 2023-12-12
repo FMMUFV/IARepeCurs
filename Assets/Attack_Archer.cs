@@ -75,6 +75,7 @@ public class Attack_Archer : StateMachineBehaviour
                
 
                 script.Jugador = hit.transform.gameObject;
+                script.UltimaPosicion_Jugador = hit.transform.position;
 
             }
             else
