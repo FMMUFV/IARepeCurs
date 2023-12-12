@@ -52,7 +52,7 @@ public class Punto_Alto_Archer : StateMachineBehaviour
         RotarEnemigo.rotation = Jugador.transform.rotation;
         //-----------
 
-        Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.red);
+        Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.yellow);
 
         if (Physics.Raycast(animator.transform.position + PosInicioRayo_Suma, rayDirection2, out hit, raycas))
         {
@@ -67,6 +67,10 @@ public class Punto_Alto_Archer : StateMachineBehaviour
 
                 script.Jugador = hit.transform.gameObject;
 
+            }
+            else
+            {
+                animator.SetBool("Patrol", true);
             }
 
         }

@@ -149,7 +149,7 @@ public class Patrol_Mage : StateMachineBehaviour
 
         Vector3 rayDirection = animator.transform.forward;
 
-        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.red);
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
 
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {

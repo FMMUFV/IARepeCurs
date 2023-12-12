@@ -35,7 +35,7 @@ public class Search_Archer : StateMachineBehaviour
     
 
 
-        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.green);
+        Debug.DrawRay(animator.transform.position + Vector3.up, animator.transform.forward * raycas, Color.blue);
 
         if (Physics.Raycast(animator.transform.position + Vector3.up, animator.transform.forward, out hit, raycas))
         {
