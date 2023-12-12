@@ -83,6 +83,11 @@ public class Attack_Archer : StateMachineBehaviour
             }
 
         }
+
+        else
+        {
+            animator.SetBool("Attack", false);
+        }
     }
 
 
