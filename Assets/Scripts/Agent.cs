@@ -14,6 +14,7 @@ public class Agent : MonoBehaviour
     [Space(10)]
     public bool Ataca = true ;
     public bool Warrior = false;
+    public bool Archer = false;
     public bool PuedeGritar = true;
     [Space(10)]
     public float currentTime;
@@ -23,4 +24,6 @@ public class Agent : MonoBehaviour
     public float velocidadSueloNormal ;
 
     public float velocidadSueloPuente;
+
+    public Vector3 PosicionAlta;
 }

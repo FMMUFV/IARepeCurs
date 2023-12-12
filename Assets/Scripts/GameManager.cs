@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         PasarWayponys();
     }
     public List<Transform> ListaWaipontsManager;
+    public List<GameObject> ListaDePuntosAltosManager;
     public void PasarWayponys()
     {
         //Pasar del una lista de gameobject por un bucle for para añadirlo en una lista de tipo transfor
@@ -47,16 +48,16 @@ public class GameManager : MonoBehaviour
         }
 
 
-      List<GameObject> enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+
+        List<GameObject> enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
       foreach(GameObject enemigo in enemigos)
         {
             Agent agent = enemigo.GetComponent<Agent>();
 
-            
 
             for(int i = 0; i < 6; i++)
             {
-                ;
+                
                 agent.ListaWaypoints.Add(ListaWaipontsManager[Random.Range(0, ListaWaipontsManager.Count)]);
             }
             //Aqui se le pasa la lista creada
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
 
 
 
+    float distancia_2 = Mathf.Infinity;
     public void Grito(Vector3 posicion)
     {
         List<GameObject>enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -84,6 +86,34 @@ public class GameManager : MonoBehaviour
                
                 agent.UltimaPosicion_Jugador = posicion;
                 // if(agent.Agritado == true)
+
+
+                //Aqui se progragama el claculo de la posicion de puntos altos
+                if (agent.Archer == true)
+                {
+
+                    ListaDePuntosAltosManager = new List<GameObject>(GameObject.FindGameObjectsWithTag("PuntoAlto"));
+
+                  
+                    float distancia = Mathf.Infinity;
+                    
+
+                    
+
+                    for(int i = 0;i< ListaDePuntosAltosManager.Count; i++)
+                    {
+                        float dist = Vector3.Distance(agent.UltimaPosicion_Jugador, ListaDePuntosAltosManager[i].transform.position);
+                        
+                        if(dist < distancia)
+                        {
+                            
+                            agent.PosicionAlta = ListaDePuntosAltosManager[i].transform.position;
+                            distancia = dist;
+                        }
+                    }
+
+                }
+
 
                 animator.SetBool("Warcry", true);
                 //animator.SetTrigger("Warcry_2");

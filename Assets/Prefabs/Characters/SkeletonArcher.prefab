@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a587b03e3990043a67c0267a3f0496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycas: 5
+  raycas: 15
   ListaWaypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -778,6 +778,7 @@ MonoBehaviour:
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 0
   Warrior: 0
+  Archer: 1
   PuedeGritar: 0
   currentTime: 0
   velocidadSueloNormal: 3.5

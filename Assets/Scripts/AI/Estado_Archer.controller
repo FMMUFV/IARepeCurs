@@ -191,7 +191,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: -110, y: 180, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -4574885083807226034}
+  m_DefaultState: {fileID: 2990657938232716469}
 --- !u!114 &-1030342071203073517
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -460,7 +460,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Punto_Alto
+    m_ConditionEvent: Warcry
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4574885083807226034}

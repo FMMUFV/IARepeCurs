@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Arma
   - Waypoints
+  - PuntoAlto
   layers:
   - Default
   - TransparentFX

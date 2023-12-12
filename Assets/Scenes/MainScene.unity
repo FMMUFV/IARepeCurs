@@ -4091,7 +4091,7 @@ PrefabInstance:
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.42
+      value: 29.619999
       objectReference: {fileID: 0}
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
@@ -4101,7 +4101,7 @@ PrefabInstance:
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60.65
+      value: 26.65
       objectReference: {fileID: 0}
     - target: {fileID: 8298141439359901293, guid: 5605d021f5d576d43b90c4c5a8ad6696,
         type: 3}
@@ -6984,6 +6984,14 @@ Transform:
   - {fileID: 1057120148}
   - {fileID: 2004703782}
   - {fileID: 1801654604}
+  - {fileID: 391609013}
+  - {fileID: 1804000149}
+  - {fileID: 1494392467}
+  - {fileID: 299776880}
+  - {fileID: 1147607362}
+  - {fileID: 235362883}
+  - {fileID: 833815643}
+  - {fileID: 845158621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226342538
@@ -7549,6 +7557,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 231953985}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235362882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235362883}
+  m_Layer: 0
+  m_Name: PuntoAlto_00006
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &235362883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235362882}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.38, y: 4.179, z: 75.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &235761887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8803,6 +8842,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6883740e2c7b9b45be698f02a55d231, type: 3}
+--- !u!1 &299776879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299776880}
+  m_Layer: 0
+  m_Name: PuntoAlto_00003
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299776880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299776879}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30.47, y: 4.179, z: 27.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &302385302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9057,6 +9127,7 @@ MonoBehaviour:
   UltimaPosicion: {x: 0, y: 0, z: 0}
   llamada: 0
   ListaWaipontsManager: []
+  ListaDePuntosAltosManager: []
 --- !u!4 &306030228
 Transform:
   m_ObjectHideFlags: 0
@@ -11913,6 +11984,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 390676782}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &391609012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391609013}
+  m_Layer: 0
+  m_Name: PuntoAlto
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391609013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391609012}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.670002, y: 4.179, z: 27.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &396671698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16923,7 +17025,7 @@ PrefabInstance:
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.02
+      value: 29.82
       objectReference: {fileID: 0}
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
@@ -16933,7 +17035,7 @@ PrefabInstance:
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60.77
+      value: 21.96
       objectReference: {fileID: 0}
     - target: {fileID: 5690238152782260812, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
@@ -16978,7 +17080,7 @@ PrefabInstance:
     - target: {fileID: 8374314283631421470, guid: 59873dc5639edab47aa0a658787af525,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18427,17 +18529,17 @@ PrefabInstance:
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 73.45
+      value: 57.95
       objectReference: {fileID: 0}
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.15
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 76.2
+      value: 34.26
       objectReference: {fileID: 0}
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
@@ -18478,11 +18580,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonArcher
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788486839447063772, guid: d1c1fd5e380a0bb468a6e994536ead78,
-        type: 3}
-      propertyPath: raycas
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6788486839447063772, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
@@ -20421,7 +20518,7 @@ Transform:
   m_GameObject: {fileID: 626214706}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4618496, y: 0, z: 0, w: 0.88695824}
-  m_LocalPosition: {x: 72.42, y: 15, z: 50.65}
+  m_LocalPosition: {x: 29.619999, y: 15, z: 16.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27868,6 +27965,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 832430514}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &833815642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833815643}
+  m_Layer: 0
+  m_Name: PuntoAlto_00007
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833815643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833815642}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 66.49, y: 4.179, z: 75.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &834157657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28189,6 +28317,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 842548793}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &845158620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845158621}
+  m_Layer: 0
+  m_Name: PuntoAlto_00005
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &845158621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845158620}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.11, y: 4.179, z: 28.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &845273480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28957,7 +29116,7 @@ Transform:
   m_GameObject: {fileID: 871117137}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4618496, y: 0, z: 0, w: 0.88695824}
-  m_LocalPosition: {x: 72.42, y: 15, z: 50.65}
+  m_LocalPosition: {x: 29.619999, y: 15, z: 16.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38026,6 +38185,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1147166244}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1147607361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147607362}
+  m_Layer: 0
+  m_Name: PuntoAlto_00004
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147607362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147607361}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.64, y: 4.179, z: 28.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1147821223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45498,7 +45688,7 @@ PrefabInstance:
     - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}
@@ -49208,6 +49398,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1489913876}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1494392466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1494392467}
+  m_Layer: 0
+  m_Name: PuntoAlto_00002
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1494392467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494392466}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30.49, y: 4.179, z: 29.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494820575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59206,6 +59427,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1803701652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1804000148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804000149}
+  m_Layer: 0
+  m_Name: PuntoAlto_00001
+  m_TagString: PuntoAlto
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804000149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804000148}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.670002, y: 4.179, z: 29.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226232364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1809477618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69890,6 +70142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonMage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473877733736978305, guid: 21f2f68be12333b4a883776eede7afbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7306781527089288367, guid: 21f2f68be12333b4a883776eede7afbc,
         type: 3}

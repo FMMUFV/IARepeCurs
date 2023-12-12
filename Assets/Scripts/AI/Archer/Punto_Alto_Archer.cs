@@ -16,12 +16,17 @@ public class Punto_Alto_Archer : StateMachineBehaviour
         script = animator.gameObject.GetComponent<Agent>();
         raycas = script.raycas;
         aget = animator.GetComponent<NavMeshAgent>();
-        aget.isStopped = true;
+
+        
+
+       // aget.isStopped = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        aget.destination = script.PosicionAlta;
+
         Rayo(animator);
     }
 
@@ -70,16 +75,18 @@ public class Punto_Alto_Archer : StateMachineBehaviour
             }
             else
             {
-                animator.SetBool("Patrol", true);
+               // animator.SetBool("Patrol", true);
             }
 
         }
+
     }
 
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         aget = animator.GetComponent<NavMeshAgent>();
+        animator.SetBool("Warcry", false);
         aget.isStopped = false;
     }
 }
