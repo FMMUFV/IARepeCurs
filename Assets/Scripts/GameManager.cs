@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    float distancia_2 = Mathf.Infinity;
+
     public void Grito(Vector3 posicion)
     {
         List<GameObject>enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
