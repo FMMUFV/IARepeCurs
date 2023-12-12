@@ -11,15 +11,20 @@ public class Punto_Alto_Archer : StateMachineBehaviour
     private Agent script;
     NavMeshAgent aget;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+
+
+    public float countdownTime = 4.0f; // Tiempo en segundos para la cuenta regresiva
+    public float currentTime;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         script = animator.gameObject.GetComponent<Agent>();
         raycas = script.raycas;
         aget = animator.GetComponent<NavMeshAgent>();
 
-        
 
-       // aget.isStopped = true;
+        currentTime = countdownTime;
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -53,9 +58,15 @@ public class Punto_Alto_Archer : StateMachineBehaviour
         //Aqui rotara el arquero mirando al jugador
         //RotarEnemigo.Rotate(Jugador.transform.position);
         
-        //Quaternion
-        RotarEnemigo.rotation = Jugador.transform.rotation;
-        //-----------
+        if((aget.remainingDistance < 1))
+        {
+
+            //Quaternion
+            RotarEnemigo.rotation = Jugador.transform.rotation;
+           
+            //-----------
+        }
+
 
         Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.yellow);
 
@@ -75,9 +86,23 @@ public class Punto_Alto_Archer : StateMachineBehaviour
             }
             else
             {
-               // animator.SetBool("Patrol", true);
-            }
+                if ((aget.remainingDistance < 1))
+                {
+                    // animator.SetBool("Patrol", true);
+                    Contados(animator);
+                }
 
+            }
+           
+
+        }
+        else
+        {
+            if ((aget.remainingDistance < 1))
+            {
+                // animator.SetBool("Patrol", true);
+                Contados(animator);
+            }
         }
 
     }
@@ -88,5 +113,28 @@ public class Punto_Alto_Archer : StateMachineBehaviour
         aget = animator.GetComponent<NavMeshAgent>();
         animator.SetBool("Warcry", false);
         aget.isStopped = false;
+    }
+
+
+
+    public void Contados(Animator animator)
+    {
+
+
+        // Verifica si el tiempo actual es mayor que 0
+        if (currentTime > 0)
+        {
+            // Reduce el tiempo actual en cada fotograma
+            currentTime -= Time.deltaTime;
+
+            // Muestra el tiempo actual en la consola (puedes adaptarlo para mostrarlo en una UI)
+        }
+        else
+        {
+            
+            currentTime = countdownTime;
+            animator.SetBool("Patrol", true);
+
+        }
     }
 }

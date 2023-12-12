@@ -17,14 +17,14 @@ public class GameManager : MonoBehaviour
         {
             //No hay un mas de un mismo gameManager y por lo tanto se le da permiso
             Instance = this;
-            Debug.Log("Somos nosotros");
+           
         }
 
         else if (Instance != this)
         {
             //ya hay mas de un gameobject con el scritp GameManager por lo tanto destruye si Insace es diferente de this
             Destroy(gameObject);
-            Debug.Log("Ya hay otra de tipo gameManager");
+          
         }
 
      
@@ -96,10 +96,6 @@ public class GameManager : MonoBehaviour
 
                   
                     float distancia = Mathf.Infinity;
-                    
-
-                    
-
                     for(int i = 0;i< ListaDePuntosAltosManager.Count; i++)
                     {
                         float dist = Vector3.Distance(agent.UltimaPosicion_Jugador, ListaDePuntosAltosManager[i].transform.position);

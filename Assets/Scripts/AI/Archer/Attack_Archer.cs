@@ -100,7 +100,9 @@ public class Attack_Archer : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+       
         aget.isStopped = false;
+
     }
 
     public void Contados(Animator animator)

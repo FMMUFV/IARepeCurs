@@ -13,7 +13,7 @@ public class Pursue_Mage : StateMachineBehaviour
     {
         animator.SetBool("Pursue", false);
 
-        Debug.Log("Pasa por pursue");
+ 
        
     }
 
