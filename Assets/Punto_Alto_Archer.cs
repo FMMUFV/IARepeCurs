@@ -28,10 +28,11 @@ public class Punto_Alto_Archer : StateMachineBehaviour
 
 
 
-
+    public Transform RotarEnemigo;
     private GameObject Jugador;
     public void Rayo(Animator animator)
     {
+        RotarEnemigo = animator.gameObject.transform;
         // Se pasa la referencia del jugador
         Jugador = GameObject.FindGameObjectWithTag("Player");
 
@@ -44,6 +45,12 @@ public class Punto_Alto_Archer : StateMachineBehaviour
         rayDirection2 = rotation2 * Vector3.forward;
 
         //----------------
+        //Aqui rotara el arquero mirando al jugador
+        //RotarEnemigo.Rotate(Jugador.transform.position);
+        
+        //Quaternion
+        RotarEnemigo.rotation = Jugador.transform.rotation;
+        //-----------
 
         Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.red);
 
