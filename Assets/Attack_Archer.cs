@@ -35,8 +35,8 @@ public class Attack_Archer : StateMachineBehaviour
         Rayo(animator);
     }
 
-  
 
+    public Transform RotarEnemigo;
     public void Rayo(Animator animator)
     {
         // Se pasa la referencia del jugador
@@ -51,6 +51,11 @@ public class Attack_Archer : StateMachineBehaviour
         rayDirection2 = rotation2 * Vector3.forward;
 
         //----------------
+        //--------Se programa la rotacion del enemigo mirando al jugador
+        RotarEnemigo = animator.gameObject.transform;
+        RotarEnemigo.rotation = Jugador.transform.rotation;
+
+        //-----------------
 
         Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.red);
 
