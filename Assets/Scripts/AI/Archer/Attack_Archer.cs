@@ -65,19 +65,42 @@ public class Attack_Archer : StateMachineBehaviour
             // Detectar al jugador
             if (hit.transform.gameObject.tag == "Player")
             {
-
-                if (AtacaDeNuevo == true)
+                //Aqui dispara solo cuando esta en una zona elevadas y al salir del estado siempre se pone a false
+                if (script.PuntoAlto == true)
                 {
-                    script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
-                    Debug.Log("Disparo el arquero");
-                    AtacaDeNuevo = false;
-                }
-                Contados(animator);
+                    
+                    if (hit.distance < 15)
+                    {
+                        if (AtacaDeNuevo == true)
+                        {
+                            script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
+                           
+                            AtacaDeNuevo = false;
 
+                          
+                        }
+                        Contados(animator);
+                    }
+                }
+                else
+                {
+                    if (hit.distance < 10)
+                    {
+                        if (AtacaDeNuevo == true)
+                        {
+                            script.Jugador.SendMessage("Damage", 1); // Infligir daño al jugador
+                           
+                            AtacaDeNuevo = false;
+                           
+                        }
+                        Contados(animator);
+                    }
+                }
                 
 
+
                 //animator.SetBool("Patrol", false);
-               
+
 
                 script.Jugador = hit.transform.gameObject;
                 script.UltimaPosicion_Jugador = hit.transform.position;
@@ -102,6 +125,7 @@ public class Attack_Archer : StateMachineBehaviour
 
        
         aget.isStopped = false;
+        script.PuntoAlto = false;
 
     }
 

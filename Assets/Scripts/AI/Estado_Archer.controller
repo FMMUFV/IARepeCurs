@@ -504,6 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycas: 0
+  countdownTime: 5
+  currentTime: 0
   RotarEnemigo: {fileID: 0}
 --- !u!1102 &7267729580766625841
 AnimatorState:
@@ -551,6 +553,7 @@ MonoBehaviour:
   currentTime: 0
   AtacaDeNuevo: 0
   RotarEnemigo: {fileID: 0}
+  AtaquePuntoAlto: 0
 --- !u!1101 &7988262148545826306
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

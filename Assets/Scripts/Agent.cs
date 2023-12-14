@@ -16,6 +16,7 @@ public class Agent : MonoBehaviour
     public bool Warrior = false;
     public bool Archer = false;
     public bool PuedeGritar = true;
+    public bool PuntoAlto = false;
     [Space(10)]
     public float currentTime;
 

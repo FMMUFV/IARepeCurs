@@ -13,7 +13,7 @@ public class Punto_Alto_Archer : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 
 
-    public float countdownTime = 4.0f; // Tiempo en segundos para la cuenta regresiva
+    public float countdownTime = 5.0f; // Tiempo en segundos para la cuenta regresiva
     public float currentTime;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -77,7 +77,7 @@ public class Punto_Alto_Archer : StateMachineBehaviour
             if (hit.transform.gameObject.tag == "Player")
             {
                 Debug.Log("El arquero lo ve al jugador");
-
+                script.PuntoAlto = true;
                 //animator.SetBool("Patrol", false);
                 animator.SetBool("Attack", true);
 
