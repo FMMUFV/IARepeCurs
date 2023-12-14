@@ -60,7 +60,7 @@ public class Pursue_Mage : StateMachineBehaviour
                 {
                     // El jugador está fuera de la distancia de ataque, así que persigue
 
-                    // Configura la posición de destino del enemigo al jugadorÇ
+                    // Configura la posición de destino del enemigo al jugador
 
                     aget.isStopped = false;
                     aget.destination = hit.transform.position;
@@ -70,12 +70,12 @@ public class Pursue_Mage : StateMachineBehaviour
             {
                 
                 animator.SetBool("Pursue", false);
-                animator.SetBool("Search", true);
+                animator.SetBool("Patrol", true);
             }
         }
 
 
-
+        
     }
 
 
