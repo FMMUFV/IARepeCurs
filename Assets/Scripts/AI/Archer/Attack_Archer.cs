@@ -108,6 +108,7 @@ public class Attack_Archer : StateMachineBehaviour
             }
             else
             {
+                //Aqui pasa al estado Search por que lo ha perdido
                 animator.SetBool("Attack", false);
             }
 
@@ -115,6 +116,7 @@ public class Attack_Archer : StateMachineBehaviour
 
         else
         {
+            //Aqui pasa al estado Search por que lo ha perdido
             animator.SetBool("Attack", false);
         }
     }
