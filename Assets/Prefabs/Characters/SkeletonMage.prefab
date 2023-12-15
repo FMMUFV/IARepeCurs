@@ -457,7 +457,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 79
   m_ObstacleAvoidanceType: 4
 --- !u!95 &9141632366840807797
 Animator:
@@ -501,10 +501,13 @@ MonoBehaviour:
   UltimaPosicion_Jugador: {x: 0, y: 0, z: 0}
   Ataca: 1
   Warrior: 0
+  Archer: 0
   PuedeGritar: 1
+  PuntoAlto: 0
   currentTime: 0
   velocidadSueloNormal: 3.5
   velocidadSueloPuente: 1.75
+  PosicionAlta: {x: 0, y: 0, z: 0}
 --- !u!54 &1732383646832986546
 Rigidbody:
   m_ObjectHideFlags: 0
