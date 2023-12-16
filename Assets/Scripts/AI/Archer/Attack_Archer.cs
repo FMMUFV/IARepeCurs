@@ -43,10 +43,10 @@ public class Attack_Archer : StateMachineBehaviour
         Jugador = script.Jugador;
 
         //------Aqui se le pasa la posicion directamente del jugador   
-        Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0) + animator.transform.position;
-        Vector3 direccion2 = (Jugador.transform.position - new Vector3(0, 1.5f, 0)) - (animator.transform.position);
-        Quaternion rotation2 = Quaternion.LookRotation(direccion2);
-        Vector3 rayDirection2 = rotation2 * Vector3.forward;
+        Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0) + animator.transform.position; // Inicializa la posición de inicio del rayo
+        Vector3 direccion2 = (Jugador.transform.position - new Vector3(0, 1.5f, 0)) - (animator.transform.position);// Calcula la dirección del rayo
+        Quaternion rotation2 = Quaternion.LookRotation(direccion2);// Calcula la rotación necesaria para apuntar en la dirección del rayo
+        Vector3 rayDirection2 = rotation2 * Vector3.forward;// Calcula la dirección final del rayo 
 
         //----------------
         //--------Se programa la rotacion del enemigo mirando al jugador
