@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void Grito(Vector3 posicion)
+    public void Grito(Vector3 posicion, GameObject Jugador)
     {
         List<GameObject>enemigos = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
 
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
                         
                         if(dist < distancia)
                         {
-                            
+                            agent.Jugador = Jugador;
                             agent.PosicionAlta = ListaDePuntosAltosManager[i].transform.position;
                             distancia = dist;
                         }

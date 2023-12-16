@@ -74,7 +74,8 @@ public class Attack_Minion : StateMachineBehaviour
                         if(script.PuedeGritar == true)
                         {
                             script.PuedeGritar = false;
-                            GameManager.Instance.Grito(hit.transform.position);
+                           
+                            GameManager.Instance.Grito(hit.transform.position, hit.transform.gameObject);
                           
                             
                            

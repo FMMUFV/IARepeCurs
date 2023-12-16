@@ -40,7 +40,7 @@ public class Attack_Archer : StateMachineBehaviour
     public void Rayo(Animator animator)
     {
         // Se pasa la referencia del jugador
-        Jugador = GameObject.FindGameObjectWithTag("Player");
+        Jugador = script.Jugador;
 
         //------Aqui se le pasa la posicion directamente del jugador   
         Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0) + animator.transform.position;

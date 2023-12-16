@@ -44,7 +44,7 @@ public class Punto_Alto_Archer : StateMachineBehaviour
     {
         RotarEnemigo = animator.gameObject.transform;
         // Se pasa la referencia del jugador
-        Jugador = GameObject.FindGameObjectWithTag("Player");
+        Jugador = script.Jugador;
 
         //------Aqui se le pasa la posicion directamente del jugador   
         Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0) + animator.transform.position; 
