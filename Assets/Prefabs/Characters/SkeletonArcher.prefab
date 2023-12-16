@@ -780,9 +780,11 @@ MonoBehaviour:
   Warrior: 0
   Archer: 1
   PuedeGritar: 0
+  PuntoAlto: 0
   currentTime: 0
-  velocidadSueloNormal: 3.5
+  velocidadSueloNormal: 4
   velocidadSueloPuente: 1.75
+  PosicionAlta: {x: 0, y: 0, z: 0}
 --- !u!195 &5791092262155974781
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -18755,7 +18755,7 @@ PrefabInstance:
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.85
+      value: 50.17
       objectReference: {fileID: 0}
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
@@ -18765,7 +18765,7 @@ PrefabInstance:
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.08
+      value: 29.04
       objectReference: {fileID: 0}
     - target: {fileID: 4682532751977574711, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
@@ -18806,11 +18806,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonArcher
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788486839447063772, guid: d1c1fd5e380a0bb468a6e994536ead78,
-        type: 3}
-      propertyPath: velocidadSueloNormal
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6788486839447063772, guid: d1c1fd5e380a0bb468a6e994536ead78,
         type: 3}
