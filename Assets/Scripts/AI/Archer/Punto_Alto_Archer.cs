@@ -76,7 +76,6 @@ public class Punto_Alto_Archer : StateMachineBehaviour
             {
                 Debug.Log("El arquero lo ve al jugador");
                 script.PuntoAlto = true;
-                //animator.SetBool("Patrol", false);
                 animator.SetBool("Attack", true);
 
                 script.Jugador = hit.transform.gameObject;
