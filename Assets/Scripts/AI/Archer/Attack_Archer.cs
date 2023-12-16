@@ -44,11 +44,9 @@ public class Attack_Archer : StateMachineBehaviour
 
         //------Aqui se le pasa la posicion directamente del jugador
         Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0);
-        Vector3 rayDirection2 = animator.transform.forward;
-        Vector3 direccion2 = (Jugador.transform.position + new Vector3(0,1,0) ) - (animator.transform.position + PosInicioRayo_Suma);
+        Vector3 direccion2 = (Jugador.transform.position - new Vector3(0, 1.5f, 0)) - (animator.transform.position);
         Quaternion rotation2 = Quaternion.LookRotation(direccion2);
-
-        rayDirection2 = rotation2 * Vector3.forward;
+        Vector3 rayDirection2 = rotation2 * Vector3.forward;
 
         //----------------
         //--------Se programa la rotacion del enemigo mirando al jugador
