@@ -92,6 +92,8 @@ public class Patrol_Mage : StateMachineBehaviour
         }
     }
 
+
+
     public void patrulla(Animator animator)
     {
 

@@ -32,8 +32,51 @@ public class Attack_Archer : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
  override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
    {
+        EnPuente(animator);
         Rayo(animator);
+        
     }
+
+
+    private bool EnlaArena = false;
+    private int PuenteMask;//Paraque afecte cuando esta en el puente
+
+    public void EnPuente(Animator animator)
+    {
+        Agent scriptAgent = animator.gameObject.GetComponent<Agent>();
+        NavMeshAgent aget = animator.GetComponent<NavMeshAgent>();
+
+
+
+
+
+        PuenteMask = 1 << NavMesh.GetAreaFromName("Scaffold");
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(animator.transform.position, out hit, 2.0f, PuenteMask))
+        {
+
+
+            if (EnlaArena == true) //Para que le cambie la velocidad solo una vez cuando este la arena
+            {
+                //NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+
+                aget.speed = scriptAgent.velocidadSueloPuente;
+                EnlaArena = false;
+
+            }
+
+
+
+        }
+        else
+        {
+
+            aget.speed = scriptAgent.velocidadSueloNormal;
+
+            EnlaArena = true;
+        }
+    }
+
 
 
     public Transform RotarEnemigo;
