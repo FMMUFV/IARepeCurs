@@ -42,8 +42,8 @@ public class Attack_Archer : StateMachineBehaviour
         // Se pasa la referencia del jugador
         Jugador = GameObject.FindGameObjectWithTag("Player");
 
-        //------Aqui se le pasa la posicion directamente del jugador
-        Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0);
+        //------Aqui se le pasa la posicion directamente del jugador   
+        Vector3 PosInicioRayo_Suma = new Vector3(0, 2.5f, 0) + animator.transform.position;
         Vector3 direccion2 = (Jugador.transform.position - new Vector3(0, 1.5f, 0)) - (animator.transform.position);
         Quaternion rotation2 = Quaternion.LookRotation(direccion2);
         Vector3 rayDirection2 = rotation2 * Vector3.forward;
@@ -55,9 +55,9 @@ public class Attack_Archer : StateMachineBehaviour
 
         //-----------------
 
-        Debug.DrawRay(animator.transform.position + PosInicioRayo_Suma, rayDirection2 * raycas, Color.red);
+        Debug.DrawRay( PosInicioRayo_Suma, rayDirection2 * raycas, Color.red);
 
-        if (Physics.Raycast(animator.transform.position + PosInicioRayo_Suma, rayDirection2, out hit, raycas))
+        if (Physics.Raycast(PosInicioRayo_Suma, rayDirection2, out hit, raycas))
         {
 
             // Detectar al jugador
